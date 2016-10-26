@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Proyecto FoodPlus con Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DAWZayas/FoodPlus.git"
+  },
+  "keywords": [
+    "food",
+    "plus",
+    "javascript",
+    "bootstrap",
+    "html5",
+    "css3"
+  ],
+  "author": "Julián Peñaranda & David Correa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DAWZayas/FoodPlus/issues"
+  },
+  "homepage": "https://github.com/DAWZayas/FoodPlus#readme"
+}
