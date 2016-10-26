@@ -64,3 +64,30 @@ footer {
 .fa {
     margin-left: 5px;
 }
+.breakfast,.lunch,.snack,.dinner,.alergic,.plates {	
+	height: 150px;
+	background-size: cover;
+}
+.breakfast {
+	background-image: url(../images/breakfast.jpg);
+}
+
+.lunch {
+	background-image: url(../images/lunch.jpg);
+}
+
+.snack {
+	background-image: url(../images/snack.jpg);
+}
+
+.dinner{
+	background-image: url(../images/dinner.jpg);
+}
+
+.alergic {
+	background-image: url(../images/alergic.jpg);
+}
+
+.plates {
+	background-image: url(../images/plates.jpg);
+}
