@@ -30,5 +30,5 @@ This application has two big purposes:
 
 ## Authors: 
 
-Óscar Rodríguez, David Correa, Julián Peñaranda y Andrea Sanz.
+David Correa y Julián Peñaranda.
 
