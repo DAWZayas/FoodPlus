@@ -1,4 +1,5 @@
 export const db = {
-  host: 'localhost';
-  
-}
+  host: 'localhost',
+  port: 28015,
+  db: 'expertsdb',
+};
