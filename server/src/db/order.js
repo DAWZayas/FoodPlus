@@ -7,5 +7,5 @@ export const Plate = thinky.createModel('Plate', {
       ingredient1: thinky.type.string().required(),
       ingredient2: thinky.type.string().required(),
     })
-  )
+  ).default([]),
 })
