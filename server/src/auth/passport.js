@@ -14,8 +14,8 @@ passport.deserializeUser(async (id, done) => {
   let user = null;
   try {
     user = await User.get(id)
-       .without(['password'])
-       .execute();
+      .without(['password'])
+      .execute();
   } catch (e) {
     done(e, false);
     return;
@@ -47,6 +47,7 @@ passport.use(new LocalStrategy({usernameField: 'login'}, async (login, password,
   delete user.password;
   return done(null, user);
 }));
+
 // use JWTStrategy
 const jwtOpts = {
   jwtFromRequest: ExtractJwt.fromHeader('x-access-token'),
@@ -54,13 +55,13 @@ const jwtOpts = {
 };
 passport.use(new JwtStrategy(jwtOpts, async (payload, done) => {
   let user;
-   try {
-     user = await User.get(payload.id)
-       .without(['password'])
-       .execute();
-   } catch (e) {
-     return done(e, false);
-   }
+  try {
+    user = await User.get(payload.id)
+      .without(['password'])
+      .execute();
+  } catch (e) {
+    return done(e, false);
+  }
   // check if exists
   if (!user) {
     return done(null, false);

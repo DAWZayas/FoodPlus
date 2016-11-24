@@ -11,7 +11,7 @@ export const loginTaken = async (login) => {
 export default (app) => {
   app.post('/api/register', asyncRequest(async (req, res) => {
     // get user input
-    const {login, name, surname, address, telephone, email, password, passwordRepeat, } = req.body;
+    const {login, password, passwordRepeat} = req.body;
 
     if (password !== passwordRepeat) {
       res.status(400).send({error: 'Passwords do not match!'});
@@ -30,13 +30,7 @@ export default (app) => {
     // save new user
     const user = new User({
       login,
-      name,
-      surname,
-      address,
-      telephone,
-      email,
       password: hashedPassword,
-
     });
     await user.save();
 
