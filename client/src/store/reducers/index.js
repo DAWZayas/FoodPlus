@@ -1,3 +1,9 @@
+import {auth} from './auth';
 import {helloWorld} from './helloworld';
+import {notifications} from './notifications';
 
-export default {helloWorld};
+export default {
+  auth,
+  helloWorld,
+  notifications,
+};
