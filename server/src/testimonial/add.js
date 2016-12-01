@@ -7,9 +7,9 @@ import {asyncRequest} from '../util';
 export default (app) => {
   app.post('/api/testimonial/add', passport.authenticate('jwt', {session: false}), asyncRequest(async (req, res) => {
     // get user input
-    const {id_parent, text, } = req.body;
+    const {text} = req.body;
 
-    //check if login already taken
+    // check if login already taken
     // const exists = await loginTaken(login);
     // if (exists) {
     //   res.status(403).send({error: 'User already exists!'});
