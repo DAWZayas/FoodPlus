@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './scss/main.scss';
+import './css/general.css';
 
 // JQuery for Bootstrap
 global.jQuery = require('jquery/dist/jquery.min.js');
@@ -24,20 +24,22 @@ import Home from './pages/home';
 import Create from './pages/create';
 import Login from './pages/login';
 import Register from './pages/register';
+import Plates from './pages/plates';
 import NotFound from './pages/notfound';
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);
-
+//onEnter={requireAuth} 
 // render on page
 ReactDOM.render((
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={Home} onEnter={requireAuth} />
+        <IndexRoute component={Home} />
         <Route path="login" component={Login} />
-        <Route path="create" component={Create} onEnter={requireAuth} />
+        <Route path="create" component={Create} />
         <Route path="register" component={Register} />
+        <Route path="plates" component={Plates} />
         <Route path="*" component={NotFound} />
       </Route>
     </Router>

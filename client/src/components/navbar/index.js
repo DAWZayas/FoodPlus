@@ -1,9 +1,16 @@
 // npm packages
 import React from 'react';
 import {Link} from 'react-router';
+import {connect} from 'react-redux';
 
 import NavbarLink from './navbarLink';
 import Logout from './logout';
+import Login from './login';
+
+const mapStateToProps = state => ({
+  actualPath: state.routing.locationBeforeTransitions && state.routing.locationBeforeTransitions.pathname,
+  user: state.auth.user
+});
 
 const NavBar = ({actualPath, user}) => (
   <nav className="navbar navbar-default">
@@ -21,7 +28,7 @@ const NavBar = ({actualPath, user}) => (
           <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
-        <Link to="/" className="navbar-brand">Experts</Link>
+        <Link to="/" className="navbar-brand">FoodPlus</Link>
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav">
@@ -31,14 +38,20 @@ const NavBar = ({actualPath, user}) => (
           <NavbarLink path="/create" actualPath={actualPath}>
             Create new question
           </NavbarLink>
-        </ul>
-        {user ? <ul className="nav navbar-nav navbar-right">
-          <li><a>Logged as {user.login}{user.provider ? ` (${user.provider})` : null}</a></li>
+          <NavbarLink path="/plates" actualPath={actualPath}>
+            Platos
+          </NavbarLink>
+          <NavbarLink path="/menu" actualPath={actualPath}>
+            Menú
+          </NavbarLink>
+        </ul>         
+        { user ? <ul className="nav navbar-nav navbar-right">
+         <li><a>Logged as {user.login}</a></li>
           <Logout />
-        </ul> : null}
+        </ul> : <Login /> }
       </div>
     </div>
   </nav>
 );
 
-export default NavBar;
+export default connect(mapStateToProps)(NavBar);

@@ -3,6 +3,7 @@ import React from 'react';
 import _ from 'lodash';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
+//import style from './style.js';
 
 // our packages
 import {getAllQuestions, answerQuestion} from '../../store/actions';
@@ -23,9 +24,13 @@ const Home = ({fetchQuestions, doAnswer, questions}) => {
 
   return (
     <div className="container">
-      {questions.map(question => (
-        <Question key={question.id} question={question} onAnswer={doAnswer} />
-      ))}
+    <ul>
+      <li className="item" id="item1">1</li>
+      <li className="item" id="item2">2</li>
+      <li className="item" id="item3">3</li>
+      <li className="item" id="item4">4</li>
+      <li className="item" id="item5">5</li>
+    </ul>
     </div>
   );
 };

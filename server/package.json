@@ -1,7 +1,7 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "Proyecto FoodPlus",
+  "name": "experts-server",
+  "version": "0.1.0",
+  "description": "Experts REST backend",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -12,23 +12,20 @@
     "test": "eslint src/ && node test/index.js | tap-spec"
   },
   "keywords": [
-    "food",
-    "plus",
+    "rest",
     "javascript",
-    "bootstrap",
-    "html5",
-    "css3"
+    "experts"
   ],
-  "author": "Julián Peñaranda & David Correa",
-  "license": "ISC",
+  "author": "Tim Ermilov <yamalight@gmail.com> (http://codezen.net)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yamalight/building-products-with-js.git"
   },
   "bugs": {
-    "url": "https://github.com/DAWZayas/FoodPlus/issues"
+    "url": "https://github.com/yamalight/building-products-with-js/issues"
   },
-  "homepage": "https://github.com/DAWZayas/FoodPlus#readme",
+  "homepage": "https://github.com/yamalight/building-products-with-js#readme",
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.11.4",
@@ -57,14 +54,12 @@
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "express-session": "^1.14.0",
-    "jsonwebtoken": "^7.2.1",
+    "jsonwebtoken": "^7.1.8",
     "moment": "^2.14.1",
     "morgan": "^1.7.0",
     "passport": "^0.3.2",
-    "passport-github": "^1.1.0",
     "passport-jwt": "^2.1.0",
     "passport-local": "^1.0.0",
-    "rethinkdb-websocket-server": "^0.6.0",
     "thinky": "^2.3.4",
     "winston": "^2.2.0"
   }

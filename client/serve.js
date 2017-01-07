@@ -6,7 +6,6 @@ const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config');
-const port = require('./config').client.port;
 
 // create express
 const app = express();
@@ -15,7 +14,7 @@ const app = express();
 config.plugins = [
   // define plugin for node env
   new webpack.DefinePlugin({
-    'process.env': {NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')},
+    'process.env': {NODE_ENV: JSON.stringify(process.env.NODE_ENV)},
   }),
   // hot reload plugin
   new webpack.HotModuleReplacementPlugin(),
@@ -50,9 +49,9 @@ app.use(express.static(__dirname));
 // serve index
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 // start server
-app.listen(port, (err) => {
+app.listen(3000, (err) => {
   if (err) {
     console.log(err);
   }
-  console.info(`==> Listening on port ${port}`);
+  console.info('==> Listening on port 3000');
 });

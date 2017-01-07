@@ -1,16 +1,15 @@
 {
   "name": "experts-client",
   "version": "0.1.0",
-  "description": "Food Plus client",
+  "description": "Experts portal client",
   "main": "index.js",
   "scripts": {
     "start": "node serve.js",
-    "dist": "webpack -p --config webpack.production.config.js",
-    "start-prod": "npm run dist -- && pushstate-server ."
+    "start-prod": "pushstate-server ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DAWZayas/FoodPlus.git"
+    "url": "git+https://github.com/yamalight/building-products-with-js.git"
   },
   "keywords": [
     "react",
@@ -19,12 +18,12 @@
     "tutorial",
     "front-end"
   ],
-  "author": "Julián Peñaranda & David Correa",
+  "author": "Tim Ermilov <yamalight@gmail.com> (http://codezen.net)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DAWZayas/FoodPlus/issues"
+    "url": "https://github.com/yamalight/building-products-with-js/issues"
   },
-    "homepage": "https://github.com/DAWZayas/FoodPlus#readme",
+  "homepage": "https://github.com/yamalight/building-products-with-js#readme",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.1.1",
@@ -44,8 +43,6 @@
     "express": "^4.14.0",
     "file-loader": "^0.9.0",
     "json-loader": "^0.5.4",
-    "node-sass": "^3.13.0",
-    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
@@ -68,9 +65,7 @@
     "react-router": "^3.0.0",
     "react-router-redux": "^4.0.6",
     "redux": "^3.6.0",
-    "redux-infinite-scroll": "^1.0.9",
     "redux-observable": "^0.12.1",
-    "rethinkdb-websocket-client": "^0.5.1",
     "rxjs": "^5.0.0-rc.1"
   }
 }
