@@ -3,7 +3,7 @@ const style = {
         maxwidth:'960px',
         width:'90%',
 
-        liststyletype:none,
+        liststyletype:'none',
         margin:'20px auto',
         padding:0,
         backgroundcolor:'midnightblue',

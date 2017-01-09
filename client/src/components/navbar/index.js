@@ -7,13 +7,24 @@ import NavbarLink from './navbarLink';
 import Logout from './logout';
 import Login from './login';
 
+const navBarStyle = {
+      color: 'red',
+      backgroundColor: 'black',
+      bottom: 0,
+      margin: "2% 0 0 0",
+    };
+const textStyle = {
+  fontSize: '15',
+  color:'white',
+}
+
 const mapStateToProps = state => ({
   actualPath: state.routing.locationBeforeTransitions && state.routing.locationBeforeTransitions.pathname,
   user: state.auth.user
 });
 
 const NavBar = ({actualPath, user}) => (
-  <nav className="navbar navbar-default">
+  <nav className="navbar navbar-default" style={navBarStyle}>
     <div className="container-fluid">
       <div className="navbar-header">
         <button
@@ -33,22 +44,22 @@ const NavBar = ({actualPath, user}) => (
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav">
           <NavbarLink path="/" actualPath={actualPath}>
-            Browse questions
+            <a style={textStyle}>Browse Testimonials</a>
           </NavbarLink>
           <NavbarLink path="/create" actualPath={actualPath}>
-            Create new question
+            <a style={textStyle}>Create new testimonial</a>
           </NavbarLink>
           <NavbarLink path="/plates" actualPath={actualPath}>
-            Platos
+            <a style={textStyle}>Platos</a>
           </NavbarLink>
           <NavbarLink path="/menu" actualPath={actualPath}>
-            Menú
+            <a style={textStyle}>Menú</a>
           </NavbarLink>
         </ul>         
         { user ? <ul className="nav navbar-nav navbar-right">
          <li><a>Logged as {user.login}</a></li>
           <Logout />
-        </ul> : <Login /> }
+        </ul> :<Login /> }
       </div>
     </div>
   </nav>
