@@ -13,6 +13,7 @@ import {auth as authConfig} from '../config';
 import setupAuthRoutes from './auth';
 import setupUserRoutes from './user';
 import setupQuestionRoutes from './question';
+import setupPlateRoutes from './plate';
 
 // init app
 const app = express();
@@ -53,6 +54,8 @@ setupAuthRoutes(app);
 setupUserRoutes(app);
 // setup question routes
 setupQuestionRoutes(app);
+// setup plate routes
+setupPlateRoutes(app);
 
 // catch all unhandled errors
 app.use((err, req, res, next) => {
