@@ -49,7 +49,7 @@ const NavBar = ({actualPath, user}) => (
           <NavbarLink path="/create" actualPath={actualPath}>
             <a style={textStyle}>Nueva pregunta</a>
           </NavbarLink>
-          <NavbarLink path="/plates" actualPath={actualPath}>
+          <NavbarLink path="/plate" actualPath={actualPath}>
             <a style={textStyle}>Platos</a>
           </NavbarLink>
           <NavbarLink path="/menu" actualPath={actualPath}>
