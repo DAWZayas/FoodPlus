@@ -20,7 +20,7 @@ export default ({question, onAnswer}) => {
               <li className="list-group-item" key={i}>{answer.answer}</li>
             ))}
           </ul>
-        ) : 'No answers yet'}
+        ) : 'No hay respuestas aún'}
       </div>
       <div className="panel-footer">
         <form className="form-horizontal">
@@ -29,12 +29,12 @@ export default ({question, onAnswer}) => {
               type="text"
               className="form-control"
               id="answerInput"
-              placeholder="Enter your answer..."
+              placeholder="Introduce tu respuesta..."
               ref={(i) => { answerInput = i; }}
             />
           </div>
           <button type="submit" className="btn btn-default" onClick={handleClick}>
-            Answer
+            Responder
           </button>
         </form>
       </div>

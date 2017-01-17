@@ -13,11 +13,9 @@ const Login = ({onLoginClick}) => {
   };
 
   return (
-    <li>
-      <p className="navbar-btn">
-        <a className="btn btn-default" onClick={handleLoginClick}>Login</a>
-      </p>
-    </li>
+  
+      <a onClick={handleLoginClick}> Accede</a>
+    
   );
 };
 

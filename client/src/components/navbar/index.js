@@ -7,24 +7,13 @@ import NavbarLink from './navbarLink';
 import Logout from './logout';
 import Login from './login';
 
-const navBarStyle = {
-      color: 'red',
-      backgroundColor: 'black',
-      bottom: 0,
-      margin: "2% 0 0 0",
-    };
-const textStyle = {
-  fontSize: '15',
-  color:'white',
-}
-
 const mapStateToProps = state => ({
   actualPath: state.routing.locationBeforeTransitions && state.routing.locationBeforeTransitions.pathname,
   user: state.auth.user
 });
 
 const NavBar = ({actualPath, user}) => (
-  <nav className="navbar navbar-default" style={navBarStyle}>
+  <nav className="navbar navbar-inverse">
     <div className="container-fluid">
       <div className="navbar-header">
         <button
@@ -35,31 +24,31 @@ const NavBar = ({actualPath, user}) => (
           aria-expanded="false"
           aria-controls="navbar">
           <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-          <span className="icon-bar" />
         </button>
         <Link to="/" className="navbar-brand">FoodPlus</Link>
       </div>
       <div id="navbar" className="navbar-collapse collapse">
-        <ul className="nav navbar-nav">
+        <ul className="nav navbar-nav navbar-right">
           <NavbarLink path="/" actualPath={actualPath}>
-            <a style={textStyle}>Ver preguntas</a>
+            <a>Inicio</a>
           </NavbarLink>
           <NavbarLink path="/create" actualPath={actualPath}>
-            <a style={textStyle}>Nueva pregunta</a>
+            <a>Nueva pregunta</a>
           </NavbarLink>
-          <NavbarLink path="/plate" actualPath={actualPath}>
-            <a style={textStyle}>Platos</a>
-          </NavbarLink>
-          <NavbarLink path="/menu" actualPath={actualPath}>
-            <a style={textStyle}>Menú</a>
-          </NavbarLink>
+          <li className="dropdown">
+            { user ?
+              <a>
+                <span className="dropdown-toggle" data-toggle="dropdown" role="button">¡Bienvenido {user.login}!</span>
+                <ul className="dropdown-menu">
+                  <NavbarLink path="/plate" actualPath={actualPath}>
+                    <li><a>Platos</a></li>
+                  </NavbarLink>
+                  <li><Logout /></li>
+                </ul>
+              </a>
+              : <Login />}
+          </li>
         </ul>
-        { user ? <ul className="nav navbar-nav navbar-right">
-         <li><a>¡Bienvenido {user.login}!</a></li>
-          <Logout />
-        </ul> :<Login /> }
       </div>
     </div>
   </nav>
