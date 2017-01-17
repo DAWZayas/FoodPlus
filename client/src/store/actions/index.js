@@ -55,3 +55,8 @@ export const createQuestion = payload => ({
   type: ActionTypes.CREATE_QUESTION,
   payload,
 });
+
+export const createPlate = payload => ({
+  type: ActionTypes.CREATE_PLATE,
+  payload,
+});

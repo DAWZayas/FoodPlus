@@ -39,36 +39,21 @@ const Login = ({onLoginClick, navToHome, token}) => {
   return (
     <div className="jumbotron">
       <h2>FoodPlus portal:</h2>
-      <p>Please log in. Or <Link to="/register">register</Link></p>
+      <p>Puedes identificarte aquí o <Link to="/register">registrarte</Link> si aún no eres miembro de nuestro restaurante.</p>
 
       <form>
         <div className="form-group">
-          <label htmlFor="inputUsername">Username:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputUsername"
-            placeholder="Username"
-            ref={(i) => { usernameInput = i; }}
-          />
+          <label htmlFor="inputUsername">Usuario:</label>
+          <input type="text" className="form-control" id="inputUsername" placeholder="Usuario" ref={(i) => { usernameInput = i; }} />
         </div>
         <div className="form-group">
-          <label htmlFor="inputPassword">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="inputPassword"
-            placeholder="Password"
-            ref={(i) => { passwordInput = i; }}
-          />
+          <label htmlFor="inputPassword">Contraseña:</label>
+          <input type="password" className="form-control" id="inputPassword" placeholder="Contraseña" ref={(i) => { passwordInput = i; }} />
         </div>
         <div className="checkbox">
           <label htmlFor="inputRemember">
-            <input
-              type="checkbox"
-              id="inputRemember"
-              ref={(i) => { rememberInput = i; }}
-            /> Remember me
+            <input type="checkbox" id="inputRemember" ref={(i) => { rememberInput = i; }} />
+            Recuérdame
           </label>
         </div>
         <button type="submit" className="btn btn-default" onClick={handleClick}>Login</button>

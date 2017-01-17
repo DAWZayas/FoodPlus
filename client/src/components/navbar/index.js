@@ -44,10 +44,10 @@ const NavBar = ({actualPath, user}) => (
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav">
           <NavbarLink path="/" actualPath={actualPath}>
-            <a style={textStyle}>Browse Testimonials</a>
+            <a style={textStyle}>Ver preguntas</a>
           </NavbarLink>
           <NavbarLink path="/create" actualPath={actualPath}>
-            <a style={textStyle}>Create new testimonial</a>
+            <a style={textStyle}>Nueva pregunta</a>
           </NavbarLink>
           <NavbarLink path="/plates" actualPath={actualPath}>
             <a style={textStyle}>Platos</a>
@@ -55,9 +55,9 @@ const NavBar = ({actualPath, user}) => (
           <NavbarLink path="/menu" actualPath={actualPath}>
             <a style={textStyle}>Menú</a>
           </NavbarLink>
-        </ul>         
+        </ul>
         { user ? <ul className="nav navbar-nav navbar-right">
-         <li><a>Logged as {user.login}</a></li>
+         <li><a>¡Bienvenido {user.login}!</a></li>
           <Logout />
         </ul> :<Login /> }
       </div>

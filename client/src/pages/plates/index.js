@@ -1,32 +1,46 @@
 // npm packages
 import React from 'react';
-import _ from 'lodash';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 
 // our packages
-//import {getAllQuestions, answerQuestion} from '../../store/actions';
+import {createPlate} from '../../store/actions';
 
-import Menus from '../../components/menus';
+const mapDispatchToProps = (dispatch) => ({
+  doCreatePlate: payload => dispatch(createPlate(payload)),
+});
 
-const Menu = ({Menus}) =>{
-  return (    
-      <div className="container-fluid container-full-height">
-      //<Menus />
-      <div className="col-xs-12 lunch">
-          <div className="caption">
-            <br>Lunch</br>
-            <small>To continue the day</small>
-          </div>    
-        </div>      
-      <ul>
-        <li className="item" id="item1">1</li>
-        <li className="item" id="item2">2</li>
-        <li className="item" id="item3">3</li>
-        <li className="item" id="item4">4</li>
-        <li className="item" id="item5">5</li>
-      </ul>      
-      </div>   
-    
+const CreatePlate = ({doCreateQuestion}) => {
+  let plateName;
+  let plateIngredients;
+
+  const handleCreate = (e) => {
+    e.preventDefault();
+
+    const name = plateName.value;
+    const ingredients = plateIngredients.value;
+
+    doCreatePlate({name, ingredients});
+
+    return false;
+  };
+
+  return (
+    <div>
+      <form>
+        <div className="form-group">
+          <label htmlFor="plateName">Nombre del plato</label>
+          <input type="text" className="form-control" id="plateName" placeholder="Nombre del plato" ref={(n) => { plateName = t; }} />
+        </div>
+
+        <div className="form-group">
+          <label> htmlFor="plateIngredients">Ingredientes</label>
+          <input type="text" className="form-control" id="plateIngredients" placeholder="Ingredientes del plato" ref={(i) => { plateIngredients = i; }} />
+        </div>
+        <button type="submit" className="btn btn-default" onClick={handleCreate}>Crear plato</button>
+      </form>
+    </div>
   );
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePlate);
