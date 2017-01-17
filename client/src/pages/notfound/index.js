@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default () => (
-  <h1>Page not found</h1>
+  <h1>¡Ups! lo que estabas buscando no lo tenemos en este momento</h1>
 );

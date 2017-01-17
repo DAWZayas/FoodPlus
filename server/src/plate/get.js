@@ -20,5 +20,8 @@ export default (app) => {
   //   // send plates back
   //   res.send(plates);
   // }));
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 };
