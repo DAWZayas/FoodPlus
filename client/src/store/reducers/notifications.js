@@ -4,7 +4,7 @@ const initialState = [];
 export const notifications = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.ADD_NOTIFICATION:
-      return [        
+      return [
         action.payload,
         ...state,
       ];
