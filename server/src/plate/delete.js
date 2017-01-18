@@ -1,5 +1,5 @@
 // npm packages
-import passsport from 'passport';
+import passport from 'passport';
 
 // our packages
 import {Plate} from '../db';
@@ -11,10 +11,9 @@ export default (app) => {
       const plate = await Plate.get(req.params.id);
 
       // delete
-      await question.delete();
+      await plate.delete();
 
       //send success status
       res.sendStatus(204);
   }));
-
 };
