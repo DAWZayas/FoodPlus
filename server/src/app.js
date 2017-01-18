@@ -14,6 +14,7 @@ import setupAuthRoutes from './auth';
 import setupUserRoutes from './user';
 import setupQuestionRoutes from './question';
 import setupPlateRoutes from './plate';
+import setupTestimonialRoutes from './testimonial';
 
 // init app
 const app = express();
@@ -56,6 +57,8 @@ setupUserRoutes(app);
 setupQuestionRoutes(app);
 // setup plate routes
 setupPlateRoutes(app);
+// setup testimonial routes
+setupTestimonialRoutes(app);
 
 // catch all unhandled errors
 app.use((err, req, res, next) => {
