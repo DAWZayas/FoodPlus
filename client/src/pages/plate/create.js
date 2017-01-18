@@ -42,7 +42,7 @@ const CreatePlate = ({doCreatePlate}) => {
           <label htmlFor="plateIngredients">Ingredientes</label>
           <input type="text" className="form-control" id="plateIngredients" placeholder="Ingredientes del plato" ref={(i) => { plateIngredients = i; }} />
         </div>
-        <button type="submit" className="btn btn-default" onClick={handleCreate}>Crear plato</button>
+        <button type="submit" className="btn btn-default" onClick={handleCreate}>Crea a new plate</button>
       </form>
     </div>
   );

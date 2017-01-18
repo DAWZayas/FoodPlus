@@ -2,7 +2,7 @@ import {login, register, logout} from './auth';
 import {addNotification} from './notifications';
 import {helloWorld} from './helloworld';
 import {getAllQuestions, answerQuestion, createQuestion} from './questions';
-import {createPlate} from './plate';
+import {createPlate, getAllPlates} from './plate';
 
 export default [
   // auth
@@ -18,4 +18,5 @@ export default [
   createQuestion,
   // Plates
   createPlate,
+  getAllPlates,
 ];

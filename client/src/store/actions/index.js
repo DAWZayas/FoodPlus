@@ -60,3 +60,7 @@ export const createPlate = payload => ({
   type: ActionTypes.CREATE_PLATE,
   payload,
 });
+
+export const getAllPlates = () => ({
+  type: ActionTypes.GET_ALL_PLATES,
+});

@@ -24,7 +24,7 @@ import Home from './pages/home';
 import Create from './pages/create';
 import Login from './pages/login';
 import Register from './pages/register';
-import Plate from './pages/plate';
+import CreatePlate from './pages/create';
 import NotFound from './pages/notfound';
 
 // Create an enhanced history that syncs navigation events with the store

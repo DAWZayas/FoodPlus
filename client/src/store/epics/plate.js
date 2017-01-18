@@ -1,6 +1,7 @@
 import {Observable} from 'rxjs/Observable';
 import * as ActionTypes from '../actionTypes';
-import {signRequest} from '../../util';
+import * as Actions from '../actions';
+import {signRequest, ajaxErrorToMessage} from '../../util';
 
 export const createPlate = action$ => action$
   .ofType(ActionTypes.CREATE_PLATE)
@@ -17,3 +18,24 @@ export const createPlate = action$ => action$
       payload: {error},
     })),
   );
+
+export const getAllPlates = action$ => action$
+  .ofType(ActionTypes.GET_ALL_PLATES)
+  .map(signRequest)
+  .switchMap(({headers}) => Observable
+  .ajax.get('http://localhost:8080/api/question', headers)
+  .map(res => res.response)
+  .map(plate => ({
+    type: ActionTypes.GET_ALL_PLATES_SUCCESS,
+    payload: {plate},
+  }))
+  .catch(error => Observable.of(
+    {
+      type: ActionTypes.GET_ALL_PLATES_ERROR,
+      payload: {error},
+    },
+    Action.addNotificationAction(
+      {text: `[get all plates] Error: ${ajaxErrorToMessage(error)}`, alerType: 'danger'},
+    ),
+  )),
+);
