@@ -1,19 +1,12 @@
 // npm packages
 import React from 'react';
 import {Link} from 'react-router';
-import {connect} from 'react-redux';
 
 import NavbarLink from './navbarLink';
 import Logout from './logout';
-import Login from './login';
-
-const mapStateToProps = state => ({
-  actualPath: state.routing.locationBeforeTransitions && state.routing.locationBeforeTransitions.pathname,
-  user: state.auth.user
-});
 
 const NavBar = ({actualPath, user}) => (
-  <nav className="navbar navbar-inverse">
+  <nav className="navbar navbar-default">
     <div className="container-fluid">
       <div className="navbar-header">
         <button
@@ -24,34 +17,28 @@ const NavBar = ({actualPath, user}) => (
           aria-expanded="false"
           aria-controls="navbar">
           <span className="sr-only">Toggle navigation</span>
+          <span className="icon-bar" />
+          <span className="icon-bar" />
+          <span className="icon-bar" />
         </button>
-        <Link to="/" className="navbar-brand">FoodPlus</Link>
+        <Link to="/" className="navbar-brand">Experts</Link>
       </div>
       <div id="navbar" className="navbar-collapse collapse">
-        <ul className="nav navbar-nav navbar-right">
+        <ul className="nav navbar-nav">
           <NavbarLink path="/" actualPath={actualPath}>
-            <a>Inicio</a>
+            Browse questions
           </NavbarLink>
           <NavbarLink path="/create" actualPath={actualPath}>
-            <a>Nueva pregunta</a>
+            Create new question
           </NavbarLink>
-          <li className="dropdown">
-            { user ?
-              <a>
-                <span className="dropdown-toggle" data-toggle="dropdown" role="button">¡Bienvenido {user.login}!</span>
-                <ul className="dropdown-menu">
-                  <NavbarLink path="/plate" actualPath={actualPath}>
-                    <li><a>Platos</a></li>
-                  </NavbarLink>
-                  <li><Logout /></li>
-                </ul>
-              </a>
-              : <Login />}
-          </li>
         </ul>
+        {user ? <ul className="nav navbar-nav navbar-right">
+          <li><a>Logged as {user.login}</a></li>
+          <Logout />
+        </ul> : null}
       </div>
     </div>
   </nav>
 );
 
-export default connect(mapStateToProps)(NavBar);
+export default NavBar;

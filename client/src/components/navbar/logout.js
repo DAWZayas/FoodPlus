@@ -13,7 +13,7 @@ const Logout = ({onLogoutClick}) => {
   };
 
   return (
-      <a onClick={handleLogoutClick}> Salir </a>
+      <a onClick={handleLogoutClick}> Logout </a>
   );
 };
 
