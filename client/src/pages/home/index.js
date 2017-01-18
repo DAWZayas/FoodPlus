@@ -36,5 +36,6 @@ const Home = ({fetchQuestions, doAnswer, questions}) => {
     </div>
   );
 };
-
+console.log(mapStateToProps);
+console.log(mapDispatchToProps);
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
