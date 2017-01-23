@@ -14,10 +14,10 @@ export default (app) => {
     res.send(plate);
   }));
 
-  // app.get('/api/plate', passport.authenticate('jwt', {session: false}), asyncRequest(async => (req, res) => {
-  //   // get 10 lastest Plates
-  //   const plates = await Plate.orderBy(r.desc('id')).limit(10);
-  //   // send plates back
-  //   res.send(plates);
-  // }));
+  app.get('/api/plate', passport.authenticate('jwt', {session: false}), asyncRequest(async (req, res) => {
+    // get 10 lastest Plates
+    const plates = await Plate.orderBy(r.desc('id')).limit(10);
+    // send plates back
+    res.send(plates);
+  }));
 };
