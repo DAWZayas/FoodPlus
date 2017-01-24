@@ -23,7 +23,7 @@ export const getAllPlates = action$ => action$
   .ofType(ActionTypes.GET_ALL_PLATES)
   .map(signRequest)
   .switchMap(({headers}) => Observable
-  .ajax.get('http://localhost:8080/api/question', headers)
+  .ajax.get('http://localhost:8080/api/plate', headers)
   .map(res => res.response)
   .map(plate => ({
     type: ActionTypes.GET_ALL_PLATES_SUCCESS,

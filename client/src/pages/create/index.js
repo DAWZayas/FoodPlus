@@ -8,7 +8,7 @@ import moment from 'moment';
 import {createQuestion} from '../../store/actions';
 
 const mapStateToProps = (state) => ({
-  // questions: state.questions.questions,
+  questions: state.questions.questions,
 });
 
 const mapDispatchToProps = (dispatch) => ({
