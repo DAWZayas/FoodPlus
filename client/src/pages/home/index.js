@@ -1,45 +1,21 @@
 // npm packages
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import MediaQuery from 'react-responsive';
+import React from 'react';
 
-// our packages
-import {getAllQuestions, answerQuestion} from '../../store/actions';
-import {QuestionList, QuestionSingle} from '../../components/question';
+import style from '../../css/style.css';
 
-const mapStateToProps = state => ({
-  questions: state.questions.questions,
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchQuestions: () => dispatch(getAllQuestions()),
-  doAnswer: payload => dispatch(answerQuestion(payload)),
-});
-
-
-class Home extends Component {
-
-  componentWillMount() {
-    this.props.fetchQuestions();
-  }
-
-  render() {
-    const {doAnswer, questions} = this.props;
-
-    return (
-      <div className="container">
-        <MediaQuery query="(min-width: 992px)">
-          {(matches) => {
-            if (matches) {
-              return <QuestionList questions={questions} doAnswer={doAnswer} />;
-            } else {
-              return <QuestionSingle questions={questions} doAnswer={doAnswer} />;
-            }
-          }}
-        </MediaQuery>
+const Home = () => (
+  <div className="row">
+    <div className="col-md-12">
+      <div className={style.deliver}>
+        asdfsdf
       </div>
-    );
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+      <div className={style.testimonial}>
+        <div className={style.caption}>
+          <h1>Testimonial</h1>
+          <p>What our customer think about of us</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+export default Home;

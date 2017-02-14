@@ -15,7 +15,7 @@ export default (app) => {
       res.status(400).send({error: 'The name of the plate should be present!'});
       return;
     }
-    if(!urlimage) {
+    if (!urlimage) {
       res.status(400).send({error: 'An image for the plate it\'s obligatory'});
       return;
     }

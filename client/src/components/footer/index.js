@@ -1,55 +1,19 @@
-  // render() {
-  //
-  //   return (
-  //     <div className="footer">
-  //     <div className="row">
-  //         <div className="col-md-4">
-  //           <center>
-  //             <h4 className="footertext">Contacto:</h4>
-  //             <ul>
-  //               <li>Calle: la que sea nº11.</li>
-  //               <li>Teléfono: 918988989</li>
-  //               <li>E-mail: foodplus/'@'/gmail.com</li>
-  //            </ul>>
-  //           </center>
-  //         </div>
-  //         <div className="col-md-4">
-  //           <center>
-  //             <h4 className="footertext">SocialNetworks</h4>
-  //               <img src="http://i39.tinypic.com/33o1c44.jpg" />
-  //               <right><img src="http://i43.tinypic.com/2ppijj4.jpg" /></right>
-  //               <left><img src="http://i39.tinypic.com/16bhq41.jpg" /></left>
-  //             </center>
-  //         </div>
-  //         <div className="col-md-4">
-  //           <center>
-  //             <h4 className="footertext">Other</h4>
-  //             <p className="footertext">Other things there<br/>
-  //           </p></center>
-  //         </div>
-  //       </div>
-  //
-  //
-  //
-  //     </div>
-  // npm packages
-  import React from 'react';
+import React from 'react';
 
-  import {Notifications} from '../notifications';
+import {Notifications} from '../notifications';
+import style from '../../css/style.css';
 
-  const style = {
-    footer: {
-      zIndex: 9999,
-      position: 'fixed',
-      bottom: '0',
-      width: '90%',
-    },
-  };
-
-  export default () => (
-    <footer style={style.footer}>
-      <div className="col-md-8">
-        <Notifications />
+// <Notifications />
+const Footer = () => (
+  <footer className="row">
+    <div className="col-md-4">
+      <h4><span className="glyphicon glyphicon-globe" /> Were we are</h4>
+      <div className={style.weare}>
+        <p><span className="glyphicon glyphicon-home" /> Streat nowhere 13</p>
+        <p><span className="glyphicon glyphicon-earphone" /> +34 912 010 010</p>
+        <p><span className="glyphicon glyphicon-envelope" /> restaurant@foodplus.com</p>
       </div>
-    </footer>
-  );
+    </div>
+  </footer>
+);
+export default Footer;

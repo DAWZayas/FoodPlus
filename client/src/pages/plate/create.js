@@ -2,26 +2,27 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
-import moment from 'moment';
 
 // our packages
 import {createPlate} from '../../store/actions';
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   doCreatePlate: payload => dispatch(createPlate(payload)),
 });
 
 const CreatePlate = ({doCreatePlate}) => {
   let plateName;
+  let plateImage;
   let plateIngredients;
 
   const handleCreate = (e) => {
     e.preventDefault();
 
     const name = plateName.value;
+    const urlimage = plateImage.value;
     const ingredients = plateIngredients.value;
 
-    doCreatePlate({name, ingredients});
+    doCreatePlate({name, urlimage, ingredients});
 
     return false;
   };
@@ -35,10 +36,15 @@ const CreatePlate = ({doCreatePlate}) => {
         </div>
 
         <div className="form-group">
+          <label htmlFor="plateImage">URL image</label>
+          <input type="text" className="form-control" id="plateImage" placeholder="http://" ref={(u) => { plateImage = u; }} />
+        </div>
+
+        <div className="form-group">
           <label htmlFor="plateIngredients">Ingredientes</label>
           <input type="text" className="form-control" id="plateIngredients" placeholder="Plate ingredients" ref={(i) => { plateIngredients = i; }} />
         </div>
-        <button type="submit" className="btn btn-default" onClick={handleCreate}>Crea a new plate</button>
+        <button type="submit" className="btn btn-success" onClick={handleCreate}>Create a new plate</button>
       </form>
     </div>
   );

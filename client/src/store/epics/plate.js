@@ -3,21 +3,6 @@ import * as ActionTypes from '../actionTypes';
 import * as Actions from '../actions';
 import {signRequest, ajaxErrorToMessage} from '../../util';
 
-export const createPlate = action$ => action$
-  .ofType(ActionTypes.CREATE_PLATE)
-  .map(signRequest)
-  .switchMap(({headers, payload}) => Observable
-    .ajax.post('http://localhost:8080/api/plate', payload, headers)
-    .map(res => res.response)
-    .map(plate => ({
-      type: ActionTypes.CREATE_PLATE_SUCCESS,
-      payload: plate,
-    }))
-    .catch(error => Observable.of({
-      type: ActionTypes.CREATE_PLATE_ERROR,
-      payload: {error},
-    })),
-  );
 
 export const getAllPlates = action$ => action$
   .ofType(ActionTypes.GET_ALL_PLATES)
@@ -39,3 +24,29 @@ export const getAllPlates = action$ => action$
     ),
   )),
 );
+
+export const createPlate = action$ => action$
+  .ofType(ActionTypes.CREATE_PLATE)
+  .map(signRequest)
+  .switchMap(({headers, payload}) => Observable
+    .ajax.post('http://localhost:8080/api/plate', payload, headers)
+    .map(res => res.response)
+    .mergeMap(plate => Observable.of(
+      {
+        type: ActionTypes.CREATE_PLATE_SUCCESS,
+        payload: plate,
+      },
+      Actions.addNotificationAction(
+        {text: `Plate with name "${plate.name}" created`, alerType: 'info'},
+      ),
+    ))
+    .catch(error => Observable.of(
+      {
+        type: ActionTypes.CREATE_PLATE_ERROR,
+        payload: {error},
+      },
+      Actions.addNotificationAction(
+        {text: `[Plate create] Error: ${ajaxErrorToMessage(error)}`, alertType: 'danger'},
+      ),
+    )),
+  );

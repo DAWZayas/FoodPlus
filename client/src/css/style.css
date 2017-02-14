@@ -1,0 +1,33 @@
+footer {
+  background-color: #222;
+  color: #FFF;
+  padding: 10px;
+}
+.weare {
+  padding-left: 15px;
+}
+.deliver, .testimonial {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.deliver {
+  background-image: url("http://localhost:3000/images/1.jpg");
+}
+.testimonial {
+  background-image: url("http://localhost:3000/images/2.jpg");
+}
+.caption {
+  padding: 5px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #FFF;
+}
