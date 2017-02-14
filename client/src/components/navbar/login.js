@@ -13,9 +13,9 @@ const Login = ({onLoginClick}) => {
   };
 
   return (
-  
-      <a onClick={handleLoginClick}> Accede</a>
-    
+
+      <a onClick={handleLoginClick}> Login</a>
+
   );
 };
 
