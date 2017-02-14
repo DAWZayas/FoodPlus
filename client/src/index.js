@@ -24,7 +24,7 @@ import Home from './pages/home';
 import Create from './pages/create';
 import Login from './pages/login';
 import Register from './pages/register';
-import CreatePlate from './pages/plate';
+import Plate from './pages/plate';
 import NotFound from './pages/notfound';
 
 // Create an enhanced history that syncs navigation events with the store
@@ -39,7 +39,7 @@ ReactDOM.render((
         <Route path="login" component={Login} />
         <Route path="create" component={Create} onEnter={requireAuth}/>
         <Route path="register" component={Register} />
-        <Route path="plate" component={CreatePlate} onEnter={requireAuth}/>
+        <Route path="plate" component={Plate} onEnter={requireAuth}/>
         <Route path="*" component={NotFound} />
       </Route>
     </Router>

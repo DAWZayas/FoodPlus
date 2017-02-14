@@ -25,9 +25,9 @@ export const getAllPlates = action$ => action$
   .switchMap(({headers}) => Observable
   .ajax.get('http://localhost:8080/api/plate', headers)
   .map(res => res.response)
-  .map(plate => ({
+  .map(plates => ({
     type: ActionTypes.GET_ALL_PLATES_SUCCESS,
-    payload: {plate},
+    payload: {plates},
   }))
   .catch(error => Observable.of(
     {

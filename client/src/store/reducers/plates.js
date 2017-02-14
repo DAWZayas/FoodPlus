@@ -1,6 +1,6 @@
 import * as ActionTypes from '../actionTypes';
 
-const initialState = {plate: [], status: 'initied'};
+const initialState = {plates: [], status: 'initied'};
 
 export const plates = (state = initialState, action) => {
   switch (action.type) {
@@ -14,13 +14,11 @@ export const plates = (state = initialState, action) => {
       plates: [],
       status: 'loading...',
     };
-
     case ActionTypes.GET_ALL_PLATES_SUCCESS:
     return {
       plates: action.payload.plates,
       status: 'done',
     };
-
     case ActionTypes.GET_PLATE_ERROR:
     case ActionTypes.GET_ALL_PLATES_ERROR:
     return {
@@ -28,7 +26,6 @@ export const plates = (state = initialState, action) => {
       status: 'error',
       error: action.payload.error,
     };
-    
     default:
       return state;
   }

@@ -1,23 +1,27 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
-const mapStateToProps = state => ({
-  plate: state.plates
-});
+class Plates extends React.Component {
 
-const viewAllPlates = ({plate}) => {
-  return (
-    <div className="row">
-      <div className="col-sm-12">
-        <div className="thumbnail">
-          <img src="..." alt="..." />
-          <div className="caption">
-            <h3>{plate.name}</h3>
-            <p>{plate.ingredients}</p>
+
+  render() {
+    const {plates} = this.props;
+
+    return (
+
+      <div className="row">
+        {plates.map(plate => (
+          <div key={plate.id} className="col-sm-4">
+            <div className="thumbnail">
+              <img src="..." alt="..." />
+              <div className="caption">
+                <h3>{plate.name}</h3>
+                <p>Ingredients: {plate.ingredients}</p>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-    </div>
-  );
+    );
+  }
 }
-export default connect(mapStateToProps)(viewAllPlates);
+export default Plates;

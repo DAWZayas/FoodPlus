@@ -1,30 +1,34 @@
 // npm packages
 import React from 'react';
 import {connect} from 'react-redux';
-import MediaQuery from 'react-responsive';
 
 // our packages
 import {getAllPlates} from '../../store/actions';
-import {Plate} from '../../components/plate';
+import {Plates} from '../../components/plate';
 
 const mapStateToProps = state => ({
-  plate: state.plates,
+  plates: state.plates.plates,
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchPlates: () => dispatch(getAllPlates())
+  fetchPlates: () => dispatch(getAllPlates()),
 });
-const viewPlates = ({plate}) => {
-  return (
-    <div className="container">
-      <MediaQuery query="(min-width: 992px)">
-        {(matches) => {
-          if (matches) {
-            return <Plate plates={plate} />;
-          }
-        }}
-      </MediaQuery>
-    </div>
-  );
+
+class Plate extends React.Component {
+
+  componentWillMount() {
+    this.props.fetchPlates();
+  }
+
+  render() {
+    // ¿De quién está cogiendo estas propiedades?
+    const {plates} = this.props;
+
+    return (
+      <div>
+        <Plates plates={plates} />
+      </div>
+    );
+  }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(viewPlates);
+export default connect(mapStateToProps, mapDispatchToProps)(Plate);

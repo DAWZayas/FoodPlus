@@ -1,5 +1,5 @@
-import Plate from './plate';
+import Plates from './plate';
 
 export {
-  Plate
+  Plates
 };

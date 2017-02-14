@@ -7,10 +7,6 @@ import moment from 'moment';
 // our packages
 import {createPlate} from '../../store/actions';
 
-const mapStateToProps = (state) => ({
-
-});
-
 const mapDispatchToProps = (dispatch) => ({
   doCreatePlate: payload => dispatch(createPlate(payload)),
 });
@@ -34,13 +30,13 @@ const CreatePlate = ({doCreatePlate}) => {
     <div>
       <form>
         <div className="form-group">
-          <label htmlFor="plateName">Nombre del plato</label>
-          <input type="text" className="form-control" id="plateName" placeholder="Nombre del plato" ref={(n) => { plateName = n; }} />
+          <label htmlFor="plateName">Plate name</label>
+          <input type="text" className="form-control" id="plateName" placeholder="Plate name" ref={(n) => { plateName = n; }} />
         </div>
 
         <div className="form-group">
           <label htmlFor="plateIngredients">Ingredientes</label>
-          <input type="text" className="form-control" id="plateIngredients" placeholder="Ingredientes del plato" ref={(i) => { plateIngredients = i; }} />
+          <input type="text" className="form-control" id="plateIngredients" placeholder="Plate ingredients" ref={(i) => { plateIngredients = i; }} />
         </div>
         <button type="submit" className="btn btn-default" onClick={handleCreate}>Crea a new plate</button>
       </form>
@@ -48,4 +44,4 @@ const CreatePlate = ({doCreatePlate}) => {
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreatePlate);
+export default connect(null, mapDispatchToProps)(CreatePlate);
