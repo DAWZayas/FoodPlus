@@ -5,6 +5,7 @@ import NavBar from '../navbar';
 
 export default (props) => (
   <header>
-    <NavBar {...props}/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <NavBar {...props} />
   </header>
 );
