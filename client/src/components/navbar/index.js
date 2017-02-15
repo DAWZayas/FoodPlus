@@ -32,7 +32,7 @@ const NavBar = ({actualPath, user}) => (
             <span className="glyphicon glyphicon-cutlery"></span> Plates
           </NavbarLink>
           <NavbarLink path="/about" actualPath={actualPath}>
-            <span className="glyphicon glyphicon-cutlery"></span> About us
+            <span className="glyphicon glyphicon-info-sign"></span> About us
           </NavbarLink>
           <NavbarLink path="/testimonials" actualPath={actualPath}>
             <span className="glyphicon glyphicon-star"></span> Testimonials
