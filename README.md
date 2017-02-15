@@ -20,7 +20,7 @@ This application have two big purposes:
 ## Other aspects:
 * Information regarding nutritional allergies is aviable for consumers.
 * People who sign into application can enjoy sales.
-* A worker of the restaurant has a user with permission to change things like: , offers, menus, manage testimonials, manage booking...
+* A worker of the restaurant has a user with permission to change things like: offers, menus, manage testimonials, manage booking...
 * In the booking, user can request that the food be served at the required time.
 
 
