@@ -1,7 +1,12 @@
+nav {
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
+}
 footer {
   background-color: #222;
-  color: #FFF;
-  padding: 10px;
+  color: #fff;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
 }
 .weare {
   padding-left: 25px;
@@ -50,4 +55,11 @@ footer {
 .transparentButtons:hover, .home-title:hover {
   text-decoration: none;
   color: #FFF;
+}
+
+/* Media querys */
+@media only screen and (min-width: 1114px) {
+  .deliver, .testimonial, .reservation {
+    height: 400px;
+  }
 }
