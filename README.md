@@ -1,34 +1,29 @@
-# FOOD PLUS 
+# FOOD PLUS
 
-## Description: 
+## Description:
 
-It is a web application of a restaurant where you can book a table or have food delivered.
+It's a web application for a restaurant where you can book a table or do food delivery.
 
-## Content: 
-	
-This application has two big purposes:
+## Content:
+
+This application have two big purposes:
 
 
-* Book a table:
-    * Users needn't be signed.
-    * Users can choose the table they want. However, previously they must complete a form, where they select the number of people to eat. In this way, our application can show them the appropriate tables.
+* **Book a table:**
+    * Users can book a table.
+    * Users can choose the table they want. However, previously they must complete a form, where they select the number of people to eat.
 
-* 	Have food delivered (In this part there are two options): 
+* **Have food delivered:**
 	* **Select a menu**:
-		* There are different menus, it depends on the hour.
-		* This menus are closed.
-		
-	* **Select differents courses**:	
-	    * Users can select all courses they want. 
-	    * Not all products aviable in the restaurant can be sent.
+		* Can select menu to see all his properties and items.
 
 ## Other aspects:
 * Information regarding nutritional allergies is aviable for consumers.
 * People who sign into application can enjoy sales.
-* A worker of the restaurant has a user with permission to change things like: tables position, offers, menus, ...
-    
+* A worker of the restaurant has a user with permission to change things like: , offers, menus, manage testimonials, manage booking...
+* In the booking, user can request that the food be served at the required time.
 
-## Authors: 
 
-David Correa y Julián Peñaranda.
+## Authors:
 
+Julián Peñaranda.
