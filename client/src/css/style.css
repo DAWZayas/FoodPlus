@@ -4,12 +4,12 @@ footer {
   padding: 10px;
 }
 .weare {
-  padding-left: 15px;
+  padding-left: 25px;
 }
-.deliver, .testimonial {
+.deliver, .testimonial, .reservation {
   width: 100%;
-  height: 200px;
-  background-size: cover;
+  height: 300px;
+  background-position: center;
   position: relative;
   display: flex;
   flex-flow: row wrap;
@@ -17,17 +17,37 @@ footer {
   align-items: center;
 }
 .deliver {
-  background-image: url("http://localhost:3000/images/1.jpg");
+  background-image: url("../images/1.jpg");
 }
 .testimonial {
-  background-image: url("http://localhost:3000/images/2.jpg");
+  background-image: url("../images/testimonial.jpg");
+}
+.reservation {
+  background-image: url("../images/reservation.jpg");
+}
+.caption, .transparentButtons {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .caption {
-  padding: 5px;
+  padding: 10px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   bottom: 0;
   left: 0;
+  color: #FFF;
+}
+.transparentButtons {
+  display: inline-block;
+  border: solid 2px #FFF;
+  color: #FFF;
+  font-weight: bold;
+  padding: 10px;
+  margin-right: 10px;
+}
+.homeTitle {
+  color: #FFF;
+}
+.transparentButtons:hover, .home-title:hover {
+  text-decoration: none;
   color: #FFF;
 }
