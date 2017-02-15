@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 nav {
   margin-bottom: 0px !important;
   border-radius: 0px !important;
@@ -11,7 +14,7 @@ footer {
 .weare {
   padding-left: 25px;
 }
-.deliver, .testimonial, .reservation {
+.deliver, .testimonial, .reservation, .headerAbout {
   width: 100%;
   height: 300px;
   background-position: center;
@@ -29,6 +32,10 @@ footer {
 }
 .reservation {
   background-image: url("../images/reservation.jpg");
+}
+.headerAbout {
+  background-image: url("../images/header-about-us.jpg");
+  background-position: top;
 }
 .caption, .transparentButtons {
   background-color: rgba(0, 0, 0, 0.5);
@@ -63,6 +70,17 @@ footer {
   border-bottom: dashed 1px #FFF;
   padding: 3px;
   width: 70%;
+}
+.containerText {
+  background-color: #F9F9F9;
+  color: #222;
+  width: 100%;
+  padding: 10px;
+  text-align: justify;
+  position: relative;
+}
+.googleMap {
+  margin: 0 auto;
 }
 
 /* Media querys */

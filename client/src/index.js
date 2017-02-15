@@ -26,6 +26,8 @@ import NotFound from './pages/notfound';
 // Plates pages routes
 import Plate from './pages/plate';
 import CreatePlate from './pages/plate/create';
+// Static pages
+import AboutUs from './pages/aboutus';
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);
@@ -41,6 +43,7 @@ ReactDOM.render((
         <Route path="register" component={Register} />
         <Route path="plate" component={Plate} onEnter={requireAuth}/>
         <Route path="createplate" component={CreatePlate} onEnter={requireAuth}/>
+        <Route path="about" component={AboutUs}/>
         <Route path="*" component={NotFound} />
       </Route>
     </Router>
