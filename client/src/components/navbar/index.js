@@ -40,7 +40,7 @@ const NavBar = ({actualPath, user}) => (
           {user ?
             <li className="dropdown">
               <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <span className="glyphicon glyphicon-user"></span> {user.login}<span className="caret"></span>
+                <span className="glyphicon glyphicon-user"></span> {user.login} <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
                 <li><a href="#"><span className="glyphicon glyphicon-th"></span> Control panel</a></li>
