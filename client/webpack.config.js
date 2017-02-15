@@ -65,6 +65,9 @@ module.exports = {
     }, {
       test: /\.gif$/,
       loader: 'url?limit=10000&mimetype=image/gif',
+    }, {
+      test: /\.jpg$/,
+      loader: 'url?limit=10000&mimetype=image/jpeg',
     }],
   },
 };
