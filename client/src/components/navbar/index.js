@@ -26,25 +26,25 @@ const NavBar = ({actualPath, user}) => (
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-right">
           <NavbarLink path="/" actualPath={actualPath}>
-            <span className="glyphicon glyphicon-home"></span> Home
+            <span className="glyphicon glyphicon-home" /> Home
           </NavbarLink>
           <NavbarLink path="/plate" actualPath={actualPath}>
-            <span className="glyphicon glyphicon-cutlery"></span> Plates
+            <span className="glyphicon glyphicon-cutlery" /> Plates
           </NavbarLink>
           <NavbarLink path="/about" actualPath={actualPath}>
-            <span className="glyphicon glyphicon-info-sign"></span> About us
+            <span className="glyphicon glyphicon-info-sign" /> About us
           </NavbarLink>
           <NavbarLink path="/testimonials" actualPath={actualPath}>
-            <span className="glyphicon glyphicon-star"></span> Testimonials
+            <span className="glyphicon glyphicon-star" /> Testimonials
           </NavbarLink>
           {user ?
             <li className="dropdown">
               <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <span className="glyphicon glyphicon-user"></span> {user.login} <span className="caret"></span>
+                <span className="glyphicon glyphicon-user" /> {user.login} <span className="caret" />
               </a>
               <ul className="dropdown-menu">
-                <li><Link to="/controlpanel"><span className="glyphicon glyphicon-th"></span> Control panel</Link></li>
-                <li role="separator" className="divider"></li>
+                <li><Link to="/controlpanel"><span className="glyphicon glyphicon-th" /> Control panel</Link></li>
+                <li role="separator" className="divider" />
                 <li><Logout /></li>
               </ul>
             </li>

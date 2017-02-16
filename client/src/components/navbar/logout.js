@@ -13,9 +13,9 @@ const Logout = ({onLogoutClick}) => {
   };
 
   return (
-      <a href="#" onClick={handleLogoutClick}>
-        <span className="glyphicon glyphicon-off"></span> Logout
-      </a>
+    <a href="#" onClick={handleLogoutClick}>
+      <span className="glyphicon glyphicon-off" /> Logout
+    </a>
   );
 };
 
