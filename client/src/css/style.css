@@ -7,6 +7,7 @@ nav {
 }
 footer {
   background-color: #222;
+  padding: 10px;
   color: #fff;
   margin-right: 0px !important;
   margin-left: 0px !important;
@@ -76,7 +77,31 @@ footer {
   text-align: justify;
   position: relative;
 }
+.social-networks {
+  margin-left: 10px;
+}
+.social-networks li{
+  display: inline-block;
+  list-style: none;
+  font-size: 2em;
+  margin-right: 30px;
+  margin-top: 20px;
+  transition: all 3s ease;
+}
 
+/* Font awesome */
+.fa-twitter {
+  color: #1DA1F2;
+}
+.fa-facebook {
+  color: #4267B2;
+}
+.fa-instagram {
+  color: #FCAE49;
+}
+.fa-twitter:hover, .fa-facebook:hover, .fa-instagram:hover {
+  -webkit-transition: all 3s ease;
+}
 /* Media querys */
 @media only screen and (min-width: 1114px) {
   .deliver, .testimonial, .reservation {
