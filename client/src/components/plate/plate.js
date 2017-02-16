@@ -2,7 +2,6 @@ import React from 'react';
 
 class Plates extends React.Component {
 
-
   render() {
     const {plates} = this.props;
 
