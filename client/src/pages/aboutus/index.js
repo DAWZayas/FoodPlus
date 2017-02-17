@@ -14,9 +14,6 @@ const AboutUs = () => (
         <p>Etiam et nibh vel turpis ultrices molestie. Pellentesque id massa sit amet sapien varius venenatis at luctus sapien. Nulla mattis finibus bibendum. Nullam sollicitudin dolor at lacus vehicula, ut venenatis tortor viverra. Pellentesque ac euismod nisi, non vehicula sapien. Fusce dictum iaculis nulla dapibus laoreet. Aenean ut nisl auctor, feugiat mauris et, ultrices lacus.</p>
       </article>
     </div>
-    <div className="col-md-12">
-      <img src={GoogleMaps} alt="GoogleMaps" />
-    </div>
   </section>
 );
 export default AboutUs;
