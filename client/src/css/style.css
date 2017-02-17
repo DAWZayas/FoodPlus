@@ -1,3 +1,6 @@
+* {
+  border-radius: 0px;
+}
 body {
   overflow-x: hidden;
 }
@@ -14,6 +17,9 @@ footer {
 }
 .we-are {
   padding-left: 25px;
+}
+.container-body {
+  margin-top: 20px;
 }
 .deliver, .testimonial, .reservation, .header-about {
   width: 100%;
@@ -38,10 +44,10 @@ footer {
   background-image: url("../images/header-about-us.jpg");
   background-position: top;
 }
-.caption, .transparent-button {
+.caption-f, .transparent-button {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.caption {
+.caption-f {
   padding: 7px;
   width: 100%;
   position: absolute;
