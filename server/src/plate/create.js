@@ -1,4 +1,4 @@
-//npm packages
+// npm packages
 import passport from 'passport';
 
 // our packages
