@@ -1,5 +1,5 @@
 // npm packages
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 // our packages
@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
   fetchPlates: () => dispatch(getAllPlates()),
 });
 
-class Plate extends React.Component {
+class Plate extends Component {
 
   componentWillMount() {
     this.props.fetchPlates();
