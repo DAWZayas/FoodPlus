@@ -5,6 +5,7 @@ import {Notifications} from '../notifications';
 // <Notifications />
 const Footer = () => (
   <footer className="row">
+    <Notifications />
     <div className="col-md-4">
       <h4 className="dashed-link"><span className="glyphicon glyphicon-globe" /> Where we are</h4>
       <div className="we-are">
