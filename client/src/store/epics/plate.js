@@ -19,7 +19,7 @@ export const getAllPlates = action$ => action$
       type: ActionTypes.GET_ALL_PLATES_ERROR,
       payload: {error},
     },
-    Action.addNotificationAction(
+    Actions.addNotificationAction(
       {text: `[get all plates] Error: ${ajaxErrorToMessage(error)}`, alerType: 'danger'},
     ),
   )),
