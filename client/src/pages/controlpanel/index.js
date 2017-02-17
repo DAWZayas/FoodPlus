@@ -27,7 +27,7 @@ class ControlPanel extends Component {
           <div className="col-md-6">
             <div className="panel panel-primary">
               <div className="panel-heading">
-                <h3 className="panel-title">Manage Plates</h3>
+                <h3 className="panel-title">Manage Plates | <Link to="/createplate"><span className="fa fa-plus-square" /> Add new plate</Link></h3>
               </div>
               <div className="panel-body">
                 <ul className="list-group">
