@@ -1,31 +1,32 @@
 {
-  "name": "experts-server",
+  "name": "FoodPlus",
   "version": "0.1.0",
-  "description": "Experts REST backend",
+  "description": "Back-end Project",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "db:create": "node util/db/create",
-    "db:start": "docker start expertsdb",
-    "db:stop": "docker stop expertsdb",
-    "db:rm": "docker rm expertsdb",
+    "db:start": "docker start foodplus",
+    "db:stop": "docker stop foodplus",
+    "db:rm": "docker rm foodplus",
     "test": "eslint src/ && node test/index.js | tap-spec"
   },
   "keywords": [
     "rest",
     "javascript",
-    "experts"
+    "client",
+    "project"
   ],
-  "author": "Tim Ermilov <yamalight@gmail.com> (http://codezen.net)",
+  "author": "Julián Peñaranda <julianpeacevedo@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yamalight/building-products-with-js.git"
+    "url": "git+https://github.com/DAWZayas/FoodPlus.git"
   },
   "bugs": {
-    "url": "https://github.com/yamalight/building-products-with-js/issues"
+    "url": "https://github.com/DAWZayas/FoodPlus/issues"
   },
-  "homepage": "https://github.com/yamalight/building-products-with-js#readme",
+  "homepage": "https://github.com/DAWZayas/FoodPlus/blob/master/README.md",
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.11.4",
