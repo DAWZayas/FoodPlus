@@ -50,3 +50,47 @@ export const createPlate = action$ => action$
       ),
     )),
   );
+
+export const getThePlate = action$ => action$
+  .ofType(ActionTypes.GET_THE_PLATE)
+  .map(signRequest)
+  .mergeMap(({headers, payload}) => Observable
+  .ajax.get(`http://localhost:8080/api/plate/${payload.id}`, headers)
+  .map(res => res.response)
+  .map(thePlate => ({
+    type: ActionTypes.GET_THE_PLATE_SUCCESS,
+    payload: {thePlate},
+  }))
+  .catch(error => Observable.of({
+    type: ActionTypes.GET_THE_PLATE_ERROR,
+    payload: {error},
+  })),
+);
+
+export const updatePlate = action$ => action$
+  .ofType(ActionTypes.UPDATE_PLATE)
+  .map(signRequest)
+  .switchMap(({headers, payload}) => Observable
+    .ajax.post(`http://localohost:8080/api/plate/${payload.id}`, payload, headers)
+    .map(res => res.response)
+    .mergeMap(response => Observable.of(
+      {
+        type: ActionTypes.UPDATE_PLATE,
+        payload: response,
+      },
+      Actions.addNotificationAction(
+        {text: 'Plate updated success', alerType: 'success'},
+      ),
+    ))
+    .catch(error => Observable.of(
+      {
+        type: ActionTypes.UPDATE_PLATE_ERROR,
+        payload: {
+          error,
+        },
+      },
+      Actions.addNotificationAction(
+        {text: 'There was a problem updating the plate', alertType: 'danger'},
+      ),
+    )),
+);

@@ -56,6 +56,9 @@ export const createQuestion = payload => ({
   payload,
 });
 
+/*
+    All actions about PLATES
+*/
 export const createPlate = payload => ({
   type: ActionTypes.CREATE_PLATE,
   payload,
@@ -63,4 +66,14 @@ export const createPlate = payload => ({
 
 export const getAllPlates = () => ({
   type: ActionTypes.GET_ALL_PLATES,
+});
+
+export const getThePlate = payload => ({
+  type: ActionTypes.GET_THE_PLATE,
+  payload,
+});
+
+export const updatePlate = payload => ({
+  type: ActionTypes.UPDATE_PLATE,
+  payload,
 });
