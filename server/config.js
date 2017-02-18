@@ -1,7 +1,7 @@
 exports.db = {
   host: process.env.EXPERTS_DB_URL || 'localhost',
   port: process.env.EXPERTS_DB_PORT || 28015,
-  db: 'expertsdb',
+  db: 'foodplus',
 };
 
 exports.auth = {

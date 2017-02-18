@@ -8,7 +8,7 @@ const path = require('path');
 const dbPath = path.join(__dirname, '..', '..', 'db');
 
 // docker run command
-const cmd = `docker run -d -p 28015:28015 -p 8090:8080 -v ${dbPath}:/data --name expertsdb rethinkdb`;
+const cmd = `docker run -d -p 28015:28015 -p 8090:8080 -v ${dbPath}:/data --name foodplus rethinkdb`;
 
 // execute command
 const start = exec(cmd);
@@ -19,7 +19,7 @@ let dbImage = false;
 // runs when command writes to stdout
 start.stdout.on('data', (data) => {
   if (data) {
-    console.log('Sucessfully created expertsdb\n');
+    console.log('Sucessfully created foodplus\n');
   }
 });
 
@@ -29,6 +29,6 @@ start.stderr.on('data', (data) => {
     console.log(data);
     dbImage = true;
   } else {
-    console.log('Error while creating expertsdb:', data);
+    console.log('Error while creating foodplus:', data);
   }
 });
