@@ -24,8 +24,8 @@ class Plate extends Component {
     const {plates} = this.props;
     return (
       <div className="row">
-        {plates.map(plate => (
-          <div key={plate.id} className="col-sm-4">
+        {plates.map((plate, i) => (
+          <div key={i} className="col-sm-4">
             <div className="thumbnail">
               <img src={plate.urlimage} alt={plate.name} />
               <div className="caption">
