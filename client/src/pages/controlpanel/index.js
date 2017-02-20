@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 
-import {getAllPlates, updatePlate} from '../../store/actions';
+import {getAllPlates, deletePlate} from '../../store/actions';
 
 const mapStateToProps = state => ({
   plates: state.plates.plates,
@@ -10,18 +10,18 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchPlates: () => dispatch(getAllPlates()),
-  editPlate: params => dispatch(updatePlate(params))
+  deletePlate: payload => dispatch(deletePlate(payload)),
 });
 
 class ControlPanel extends Component {
 
   componentWillMount() {
     this.props.fetchPlates();
+
   }
 
   render() {
     const {plates} = this.props;
-
     return (
       <section className="row">
         <div className="container-body">
@@ -40,10 +40,10 @@ class ControlPanel extends Component {
                         <li key={plate.id} className="list-group-item">
                           <div className="btn-group" role="group" aria-label="...">
                             <button type="button" className="btn btn-default">
-                              <Link to={`/deleteplate/${plate.id}`}><span className="fa fa-trash" /></Link>
+                              <span className="fa fa-trash" />
                             </button>
                             <button type="button" className="btn btn-default">
-                              <Link to="/updateplate"><span className="fa fa-pencil-square-o" /></Link>
+                              <Link to={`/updateplate/${plate.id}`}><span className="fa fa-pencil-square-o" /></Link>
                             </button>
                           </div> {plate.name}
                         </li>

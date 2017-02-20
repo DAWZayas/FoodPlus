@@ -1,10 +1,12 @@
 // our packages
 import create from './create';
 import get from './get';
-import deletePlate from './delete'
+import update from './update';
+import deletePlate from './delete';
 
 export default (app) => {
   create(app);
   get(app);
+  update(app);
   deletePlate(app);
 };

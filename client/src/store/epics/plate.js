@@ -50,47 +50,44 @@ export const createPlate = action$ => action$
       ),
     )),
   );
-
 export const getThePlate = action$ => action$
   .ofType(ActionTypes.GET_THE_PLATE)
   .map(signRequest)
-  .mergeMap(({headers, payload}) => Observable
-  .ajax.get(`http://localhost:8080/api/plate/${payload.id}`, headers)
-  .map(res => res.response)
-  .map(thePlate => ({
-    type: ActionTypes.GET_THE_PLATE_SUCCESS,
-    payload: {thePlate},
-  }))
-  .catch(error => Observable.of({
-    type: ActionTypes.GET_THE_PLATE_ERROR,
-    payload: {error},
-  })),
+  .switchMap(({headers, payload}) => Observable
+    .ajax.get(`http://localhost:8080/api/plate/${payload.id}`, headers)
+    .map(res => res.response)
+    .mergeMap(thePlate => Observable.of({
+      type: ActionTypes.GET_THE_PLATE_SUCCESS,
+      payload: {thePlate},
+    }))
+    .catch(error => Observable.of({
+      type: ActionTypes.GET_THE_PLATE_ERROR,
+      payload: {error},
+    },
+    Actions.addNotificationAction({
+      text: `error: ${ajaxErrorToMessage(error)}`, alerType: 'danger',
+    }),
+  )),
 );
-
-export const updatePlate = action$ => action$
-  .ofType(ActionTypes.UPDATE_PLATE)
+export const deletePlate = action$ => action$
+  .ofType(ActionTypes.DELETE_PLATE)
   .map(signRequest)
   .switchMap(({headers, payload}) => Observable
-    .ajax.post(`http://localohost:8080/api/plate/${payload.id}`, payload, headers)
+    .ajax.post(`http://localhost:8080/api/plate/${payload.id}`, headers)
     .map(res => res.response)
-    .mergeMap(response => Observable.of(
-      {
-        type: ActionTypes.UPDATE_PLATE,
-        payload: response,
-      },
-      Actions.addNotificationAction(
-        {text: 'Plate updated success', alerType: 'success'},
-      ),
-    ))
-    .catch(error => Observable.of(
-      {
-        type: ActionTypes.UPDATE_PLATE_ERROR,
-        payload: {
-          error,
-        },
-      },
-      Actions.addNotificationAction(
-        {text: 'There was a problem updating the plate', alertType: 'danger'},
-      ),
-    )),
-);
+    .mergeMap(plate => Observable.of({
+      type: ActionTypes.DELETE_PLATE_SUCCESS,
+      payload: {plate},
+    },
+      Actions.addNotificationAction({
+        text: 'Plate deleted', alerType: 'success',
+      }),
+  ))
+  .catch(error => Observable.of({
+    type: ActionTypes.DELETE_PLATE_ERROR,
+    payload: error,
+  },
+  Actions.addNotificationAction({
+    text: `error: ${ajaxErrorToMessage(error)}`, alerType: 'danger',
+  }),
+)));

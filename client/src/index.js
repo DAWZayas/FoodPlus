@@ -34,7 +34,7 @@ import AboutUs from './pages/aboutus';
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);
-//onEnter={requireAuth}
+// onEnter={requireAuth}
 // render on page
 ReactDOM.render((
   <Provider store={store}>
@@ -44,9 +44,9 @@ ReactDOM.render((
         <Route path="login" component={Login} />
         <Route path="create" component={Create} onEnter={requireAuth} />
         <Route path="register" component={Register} />
-        <Route path="plate" component={Plate} onEnter={requireAuth} />
+        <Route path="plates" component={Plates} onEnter={requireAuth} />
         <Route path="createplate" component={CreatePlate} onEnter={requireAuth} />
-        <Route path="updateplate" component={UpdatePlate} onEnter={requireAuth} />
+        <Route path="updateplate/:id" component={UpdatePlate} onEnter={requireAuth} />
         <Route path="controlpanel" component={ControlPanel} onEnter={requireAuth} />
         <Route path="about" component={AboutUs} />
         <Route path="*" component={NotFound} />

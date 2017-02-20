@@ -8,12 +8,12 @@ import {asyncRequest} from '../util';
 export default (app) => {
   app.delete('/api/plate/:id', passport.authenticate('jwt', {session: false}), asyncRequest(async (req, res) => {
       // get requested Plate
-      const plate = await Plate.get(req.params.id);
+    const plate = await Plate.get(req.params.id);
 
-      // delete
-      await plate.delete();
+    // delete
+    await plate.delete();
 
-      //send success status
-      res.sendStatus(204);
+    // send success status
+    res.sendStatus(204);
   }));
 };

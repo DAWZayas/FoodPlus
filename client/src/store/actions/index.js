@@ -77,3 +77,8 @@ export const updatePlate = payload => ({
   type: ActionTypes.UPDATE_PLATE,
   payload,
 });
+
+export const deletePlate = payload => ({
+  type: ActionTypes.DELETE_PLATE,
+  payload,
+});
