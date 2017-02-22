@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
+import {push} from 'react-router-redux';
 
 import {getAllPlates, deletePlate} from '../../store/actions';
 
@@ -11,8 +12,16 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchPlates: () => dispatch(getAllPlates()),
   deletePlate: payload => dispatch(deletePlate(payload)),
+  backToBack: () => dispatch(push('/controlpanel')),
 });
 
+const handleDelete = (e) => {
+  e.preventDefault();
+  deletePlate({
+    id: plates.id,
+  });
+  setInmediate(() => backToBack());
+};
 class ControlPanel extends Component {
 
   componentWillMount() {
@@ -39,12 +48,10 @@ class ControlPanel extends Component {
                       plates.map(plate => (
                         <li key={plate.id} className="list-group-item">
                           <div className="btn-group" role="group" aria-label="...">
-                            <button type="button" className="btn btn-default">
+                            <button type="button" className="btn btn-danger" onClick={handleDelete}>
                               <span className="fa fa-trash" />
                             </button>
-                            <button type="button" className="btn btn-default">
-                              <Link to={`/updateplate/${plate.id}`}><span className="fa fa-pencil-square-o" /></Link>
-                            </button>
+                              <Link className="btn btn-success" to={`/updateplate/${plate.id}`}><span className="fa fa-pencil-square-o" /></Link>
                           </div> {plate.name}
                         </li>
                       ))

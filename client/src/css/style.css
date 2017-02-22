@@ -20,6 +20,7 @@ footer {
 }
 .container-body {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .deliver, .testimonial, .reservation, .header-about {
   width: 100%;

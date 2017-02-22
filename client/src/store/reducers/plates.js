@@ -32,19 +32,13 @@ export const plates = (state = initialState, action) => {
     case ActionTypes.GET_THE_PLATE_SUCCESS:
       return {
         ...state,
-        plates: action.payload.thePlate,
+        plate: action.payload.thePlate,
         status: 'done',
       };
     case ActionTypes.UPDATE_PLATE:
       return {
         ...state,
         status: 'loading...',
-      };
-    case ActionTypes.DELETE_PLATE_SUCCESS:
-      const plateWillDeleted = state.plates.filter(obj => obj.id !== action.payload.id)
-      return {
-        ...state,
-        plates: plateWillDeleted,
       };
     case ActionTypes.UPDATE_PLATE_ERROR:
     case ActionTypes.GET_THE_PLATE_ERROR:

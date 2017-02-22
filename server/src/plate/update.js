@@ -6,7 +6,7 @@ import {Plate} from '../db';
 export default (app) => {
   app.post('/api/plate/:id', passport.authenticate('jwt', {session: false}),
   asyncRequest(async (req, res) => {
-    const {name, ingredients} = req.body;
+    const {name, ingredients, urlimage} = req.body;
 
     let plate;
     try {
@@ -21,6 +21,9 @@ export default (app) => {
       plate.name = name;
     }
     if (ingredients) {
+      plate.ingredients = ingredients;
+    }
+    if (urlimage) {
       plate.ingredients = ingredients;
     }
 
