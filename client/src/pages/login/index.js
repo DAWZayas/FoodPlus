@@ -28,7 +28,7 @@ const Login = ({onLoginClick}) => {
   return (
     <div className="container" style={{marginTop: '100px'}}>
       <div className="jumbotron">
-        <h2>Experts portal:</h2>
+        <h2>FoodPlus:</h2>
         <p>Please log in. Or <Link to="/register">register</Link></p>
 
         <form>

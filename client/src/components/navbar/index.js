@@ -28,7 +28,7 @@ const NavBar = ({actualPath, user}) => (
           <NavbarLink path="/" actualPath={actualPath}>
             <span className="glyphicon glyphicon-home" /> Home
           </NavbarLink>
-          <NavbarLink path="/plate" actualPath={actualPath}>
+          <NavbarLink path="/plates" actualPath={actualPath}>
             <span className="glyphicon glyphicon-cutlery" /> Plates
           </NavbarLink>
           <NavbarLink path="/about" actualPath={actualPath}>
