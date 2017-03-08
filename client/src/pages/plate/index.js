@@ -32,6 +32,7 @@ class Plate extends Component {
                 <div className="caption">
                   <h3>{plate.name}</h3>
                   <p>{plate.ingredients}</p>
+                  <button className="btn btn-success">Add to cart</button> <button className="btn btn-info">+ info</button>
                 </div>
               </div>
             </div>

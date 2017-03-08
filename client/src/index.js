@@ -31,6 +31,7 @@ import UpdatePlate from './pages/plate/update';
 import ControlPanel from './pages/controlpanel/';
 // Static pages
 import AboutUs from './pages/aboutus';
+import Testimonials from './pages/testimonials';
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);
@@ -49,6 +50,7 @@ ReactDOM.render((
         <Route path="updateplate/:id" component={UpdatePlate} onEnter={requireAuth} />
         <Route path="controlpanel" component={ControlPanel} onEnter={requireAuth} />
         <Route path="about" component={AboutUs} />
+        <Route path="testimonials" component={Testimonials} />
         <Route path="*" component={NotFound} />
       </Route>
     </Router>

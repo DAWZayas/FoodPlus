@@ -95,7 +95,27 @@ footer {
   margin-top: 20px;
   transition: all 3s ease;
 }
-
+.img-circle {
+  width: 20px;
+  height: 20px;
+}
+.profile-image {
+  width: 60px;
+  height: 60px;
+  margin-right: 5px;
+  margin-bottom: 1px;
+  float: left;
+  border-radius: 50px;
+}
+.panel-primary, .panel-heading {
+  border-color: #555 !important;
+}
+.panel-heading {
+  background-color: #555 !important;
+}
+.justify-text {
+  text-align: justify;
+}
 /* Font awesome */
 .fa-twitter {
   color: #1DA1F2;

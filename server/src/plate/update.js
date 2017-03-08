@@ -24,7 +24,7 @@ export default (app) => {
       plate.ingredients = ingredients;
     }
     if (urlimage) {
-      plate.ingredients = ingredients;
+      plate.urlimage = urlimage;
     }
 
     try {

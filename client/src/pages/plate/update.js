@@ -19,10 +19,10 @@ class UpdatePlate extends Component {
   render() {
     const {plate} = this.props;
     return (
-      <section className="row container-body">
+      <div className="row container-body">
         <div className="col-md-6">
-          <a href="#" className="thumbnail">
-          <img src={plate.urlimage} alt="..." />
+          <a className="thumbnail">
+            <img src={plate.urlimage} alt="plate" />
           </a>
           <div className="caption-f">Tab for change the image</div>
         </div>
@@ -37,7 +37,7 @@ class UpdatePlate extends Component {
           </div>
           <button type="submit" className="btn btn-success">Update plate</button>
         </div>
-      </section>
+      </div>
     );
   }
 }
