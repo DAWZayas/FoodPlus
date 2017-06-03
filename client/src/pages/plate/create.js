@@ -1,6 +1,5 @@
 // npm packages
 import React from 'react';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 
 // our packages
@@ -28,24 +27,26 @@ const CreatePlate = ({doCreatePlate}) => {
   };
 
   return (
-    <div>
-      <form>
-        <div className="form-group">
-          <label htmlFor="plateName">Plate name</label>
-          <input type="text" className="form-control" id="plateName" placeholder="Plate name" ref={(n) => { plateName = n; }} />
-        </div>
+    <div className="row">
+      <div className="col-md-12 margined-content colored-background-content">
+        <form>
+          <div className="form-group">
+            <label htmlFor="plateName">Plate name</label>
+            <input type="text" className="form-control" id="plateName" placeholder="Plate name" ref={(n) => { plateName = n; }} />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="plateImage">URL image</label>
-          <input type="text" className="form-control" id="plateImage" placeholder="http://" ref={(u) => { plateImage = u; }} />
-        </div>
+          <div className="form-group">
+            <label htmlFor="plateImage">URL image</label>
+            <input type="text" className="form-control" id="plateImage" placeholder="http://" ref={(u) => { plateImage = u; }} />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="plateIngredients">Ingredientes</label>
-          <input type="text" className="form-control" id="plateIngredients" placeholder="Plate ingredients" ref={(i) => { plateIngredients = i; }} />
-        </div>
-        <button type="submit" className="btn btn-success" onClick={handleCreate}>Create a new plate</button>
-      </form>
+          <div className="form-group">
+            <label htmlFor="plateIngredients">Ingredientes</label>
+            <input type="text" className="form-control" id="plateIngredients" placeholder="Plate ingredients" ref={(i) => { plateIngredients = i; }} />
+          </div>
+          <button type="submit" className="btn btn-success" onClick={handleCreate}>Create a new plate</button>
+        </form>
+      </div>
     </div>
   );
 };

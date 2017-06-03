@@ -20,7 +20,7 @@ export const getAllPlates = action$ => action$
       payload: {error},
     },
     Actions.addNotificationAction(
-      {text: `[get all plates] Error: ${ajaxErrorToMessage(error)}`, alerType: 'danger'},
+      {text: `[Getting plates] Error: ${ajaxErrorToMessage(error)}`, alertType: 'danger'},
     ),
   )),
 );
@@ -37,7 +37,7 @@ export const createPlate = action$ => action$
         payload: plate,
       },
       Actions.addNotificationAction(
-        {text: `Plate with name "${plate.name}" created`, alerType: 'info'},
+        {text: `Plate with name "${plate.name}" created`, alertType: 'info'},
       ),
     ))
     .catch(error => Observable.of(
@@ -65,7 +65,7 @@ export const getThePlate = action$ => action$
       payload: {error},
     },
     Actions.addNotificationAction({
-      text: `error: ${ajaxErrorToMessage(error)}`, alerType: 'danger',
+      text: `error: ${ajaxErrorToMessage(error)}`, alertType: 'danger',
     }),
   )),
 );
@@ -88,6 +88,6 @@ export const deletePlate = action$ => action$
     payload: error,
   },
   Actions.addNotificationAction({
-    text: `error: ${ajaxErrorToMessage(error)}`, alerType: 'danger',
+    text: `error: ${ajaxErrorToMessage(error)}`, alertType: 'danger',
   }),
 )));
