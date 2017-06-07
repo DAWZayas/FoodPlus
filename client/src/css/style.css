@@ -22,10 +22,6 @@ footer {
 .we-are {
   padding-left: 25px;
 }
-.container-body {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 .deliver, .testimonial, .reservation, .header-about {
   width: 100%;
   height: 300px;
@@ -110,6 +106,9 @@ footer {
   margin-bottom: 1px;
   float: left;
   border-radius: 50px;
+  background-image: url('../images/profile.png');
+  background-position: cover;
+  background-size: 60px 60px;
 }
 .panel-primary, .panel-heading {
   border-color: #555 !important;
@@ -121,10 +120,7 @@ footer {
   text-align: justify;
 }
 .margined-content {
-  padding: 15px;
-}
-.colored-background-content {
-  background-color: #AACD6E;
+  margin: 15px 5px !important;
 }
 /* Font awesome */
 .fa-twitter {

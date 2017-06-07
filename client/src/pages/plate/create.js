@@ -28,7 +28,7 @@ const CreatePlate = ({doCreatePlate}) => {
 
   return (
     <div className="row">
-      <div className="col-md-12 margined-content colored-background-content">
+      <div className="col-md-12 margined-content">
         <form>
           <div className="form-group">
             <label htmlFor="plateName">Plate name</label>

@@ -3,7 +3,7 @@ import React from 'react';
 const AboutUs = () => (
   <section className="row">
     <div className="col-md-12">
-      <div className="header-about"/>
+      <div className="header-about" />
     </div>
     <div className="col-md-12">
       <article className="container-text">

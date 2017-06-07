@@ -20,5 +20,5 @@ export default [
   createPlate,
   getAllPlates,
   getThePlate,
-  deletePlate
+  deletePlate,
 ];

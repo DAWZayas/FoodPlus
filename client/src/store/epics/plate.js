@@ -73,14 +73,14 @@ export const deletePlate = action$ => action$
   .ofType(ActionTypes.DELETE_PLATE)
   .map(signRequest)
   .switchMap(({headers, payload}) => Observable
-    .ajax.post(`http://localhost:8080/api/plate/${payload.id}`, headers)
+    .ajax.delete(`http://localhost:8080/api/plate/${payload.plateId}`, headers)
     .map(res => res.response)
-    .mergeMap(response => Observable.of({
+    .mergeMap(() => Observable.of({
       type: ActionTypes.DELETE_PLATE_SUCCESS,
-      payload: response,
+      payload,
     },
       Actions.addNotificationAction({
-        text: 'Plate deleted', alerType: 'success',
+        text: 'Plate deleted', alertType: 'success',
       }),
   ))
   .catch(error => Observable.of({
@@ -90,4 +90,5 @@ export const deletePlate = action$ => action$
   Actions.addNotificationAction({
     text: `error: ${ajaxErrorToMessage(error)}`, alertType: 'danger',
   }),
-)));
+)),
+);
