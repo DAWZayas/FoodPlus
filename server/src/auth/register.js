@@ -29,6 +29,7 @@ export default (app) => {
 
     // save new user
     const user = new User({
+      level: 2,
       login,
       password: hashedPassword,
     });
