@@ -12,7 +12,7 @@ export default (app) => {
     res.send(testimonial);
   }));
 
-  app.get('/api/testimonial/:id', asyncRequest(async (req, res) => {
+  app.get('/api/testimonial/:testimonialId', asyncRequest(async (req, res) => {
     try {
       // get requested plate
       const testimonial = await Testimonial.get(req.params.id);

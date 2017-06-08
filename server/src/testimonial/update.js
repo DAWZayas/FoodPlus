@@ -6,7 +6,7 @@ import {Testimonial} from '../db';
 import {asyncRequest} from '../util';
 
 export default (app) => {
-  app.post('/api/testimonial/:id', passport.authenticate('jwt', {session: false}), asyncRequest(async (req, res) => {
+  app.post('/api/testimonial/:testimonialId', passport.authenticate('jwt', {session: false}), asyncRequest(async (req, res) => {
     const {testimonialId} = req.params;
     // get user input
     const {state} = req.body;
@@ -27,7 +27,7 @@ export default (app) => {
     }
 
     // check if user is administrator
-    if (req.user.level !== 1) {
+    if (req.user.level !== 'standar') {
       res.status(403).send({error: 'Not enough rights to change the testimonial!'});
       return;
     }
