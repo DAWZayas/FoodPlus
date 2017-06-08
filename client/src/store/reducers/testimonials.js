@@ -16,13 +16,13 @@ export const testimonials = (state = initialState, action) => {
     case ActionTypes.DELETE_TESTIMONIAL:
     case ActionTypes.UPDATE_TESTIMONIAL:
       return {
-        plates: [],
+        testimonials: [],
         status: 'loading...',
       };
     case ActionTypes.GET_TESTIMONIAL_SUCCESS:
       return {
         ...state,
-        plates: action.payload.plates,
+        testimonials: action.payload.testimonials,
         status: 'done',
       };
     case ActionTypes.DELETE_TESTIMONIAL_SUCCESS: {
