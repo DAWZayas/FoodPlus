@@ -13,7 +13,7 @@ export default (app) => {
     const testimonial = await Testimonial.get(req.params.testimonialId);
 
     // check if user is the owner
-    if (req.user.level !== 'standar') {
+    if (req.user.level !== 'admin') {
       res.status(403).send({error: 'Not enough rights to delete the testimonial!'});
       return;
     }

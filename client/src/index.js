@@ -27,13 +27,10 @@ import ControlPanel from './pages/controlpanel/';
 // Static pages
 import AboutUs from './pages/aboutus';
 import Testimonials from './pages/testimonials';
+
 // JQuery for Bootstrap
 global.jQuery = require('jquery/dist/jquery.min.js');
 require('bootstrap/dist/js/bootstrap.min.js');
-
-// our packages
-
-// our pages
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);

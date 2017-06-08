@@ -3,6 +3,7 @@ import {addNotification} from './notifications';
 import {helloWorld} from './helloworld';
 import {getAllQuestions, answerQuestion, createQuestion} from './questions';
 import {createPlate, getAllPlates, getThePlate, deletePlate} from './plate';
+import {sendTestimonial, updateTestimonial, getTestimonial, deleteTestimonial} from './testimonials';
 
 export default [
   // auth
@@ -21,4 +22,9 @@ export default [
   getAllPlates,
   getThePlate,
   deletePlate,
+  // Testimonials
+  sendTestimonial,
+  updateTestimonial,
+  getTestimonial,
+  deleteTestimonial,
 ];
