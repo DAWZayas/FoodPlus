@@ -122,6 +122,20 @@ footer {
 .margined-content {
   margin: 15px 5px !important;
 }
+.testimonial-container {
+  position: relative;
+  margin-bottom: 40px !important;
+}
+.testimonial-button-send {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 98%;
+  border-top: #5A9367;
+}
+.textarea-testimonial {
+  margin-bottom: 10px;
+}
 /* Font awesome */
 .fa-twitter {
   color: #1DA1F2;

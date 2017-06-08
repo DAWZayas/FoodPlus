@@ -6,13 +6,13 @@ const Home = () => (
   <div className="row">
     <div className="col-md-12">
       <div className="deliver">
-        <Link to="/delivery" className="transparent-button">Delivery</Link>
-        <Link to="/reservation" className="transparent-button">Reservation</Link>
+        <Link to="/booking" className="transparent-button">Booking</Link>
+        <Link to="/login" className="transparent-button">Login</Link>
       </div>
       <div className="testimonial">
         <div className="caption-f">
           <h3><Link className="home-title" to="/testimonials">Testimonial</Link></h3>
-          <p>What our customer think about of us</p>
+          <p>What our customer think about us</p>
         </div>
       </div>
       <div className="reservation">
