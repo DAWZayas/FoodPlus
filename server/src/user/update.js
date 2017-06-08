@@ -8,7 +8,7 @@ import {hash, asyncRequest} from '../util';
 
 export default (app) => {
   app.post('/api/user/:id', passport.authenticate('jwt', {session: false}), asyncRequest(async (req, res) => {
-    const {login, password, passwordRepeat} = req.body;
+    const {login, level, password, passwordRepeat} = req.body;
 
     // check if user is changing his own profile
     if (req.user.id !== req.params.id) {
@@ -33,8 +33,9 @@ export default (app) => {
     // check if data is actually changed
     const loginChanged = login && user.login !== login;
     const passwordChanged = password && user.password !== hash(password);
+    const levelChanged = level && user.level !== level;
     // if not - just send OK
-    if (!loginChanged && !passwordChanged) {
+    if (!loginChanged && !passwordChanged && !levelChanged) {
       delete user.password;
       res.send(user);
       return;
@@ -55,6 +56,9 @@ export default (app) => {
     // update data
     if (login) {
       user.login = login;
+    }
+    if (level) {
+      user.level = level;
     }
     if (password) {
       user.password = hash(password);
