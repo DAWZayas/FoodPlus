@@ -2,6 +2,7 @@ import {thinky} from './thinky';
 
 export const Testimonial = thinky.createModel('Testimonial', {
   owner: thinky.type.string().required(),
-  creationDate: thinky.type.date().default(thinky.r.now()),
+  ownerName: thinky.type.string().required(),
   text: thinky.type.string().required(),
+  state: thinky.type.string().required(),
 });
