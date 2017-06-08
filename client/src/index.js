@@ -6,18 +6,13 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 import {Provider} from 'react-redux';
 
-// styles
+// import bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-// JQuery for Bootstrap
-global.jQuery = require('jquery/dist/jquery.min.js');
-require('bootstrap/dist/js/bootstrap.min.js');
 
-// our packages
 import App from './app';
 import store from './store';
 import {requireAuth} from './util';
 
-// our pages
 import Home from './pages/home';
 import Create from './pages/create';
 import Login from './pages/login';
@@ -32,6 +27,13 @@ import ControlPanel from './pages/controlpanel/';
 // Static pages
 import AboutUs from './pages/aboutus';
 import Testimonials from './pages/testimonials';
+// JQuery for Bootstrap
+global.jQuery = require('jquery/dist/jquery.min.js');
+require('bootstrap/dist/js/bootstrap.min.js');
+
+// our packages
+
+// our pages
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);
