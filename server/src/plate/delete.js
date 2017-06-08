@@ -13,7 +13,7 @@ export default (app) => {
     const plate = await Plate.get(req.params.id);
 
     // check if user is the owner
-    if (req.user.level !== plate.level) {
+    if (req.user.level !== 'admin') {
       res.status(403).send({error: 'Not enough rights to delete the plate!'});
       return;
     }

@@ -12,7 +12,6 @@ import {logger} from './util';
 import {auth as authConfig} from '../config';
 import setupAuthRoutes from './auth';
 import setupUserRoutes from './user';
-import setupQuestionRoutes from './question';
 import setupPlateRoutes from './plate';
 import setupTestimonialRoutes from './testimonial';
 
@@ -53,8 +52,6 @@ app.get('/', (req, res) => {
 setupAuthRoutes(app);
 // setup user routes
 setupUserRoutes(app);
-// setup question routes
-setupQuestionRoutes(app);
 // setup plate routes
 setupPlateRoutes(app);
 // setup testimonial routes
