@@ -76,7 +76,7 @@ export const deletePlate = action$ => action$
     .ajax.delete(`http://localhost:8080/api/plate/${payload.plateId}`, headers)
     .map(res => res.response)
     .mergeMap(() => Observable.of({
-      type: ActionTypes.DELETE_PLATE_SUCCESS,
+      type: ActionTypes.GET_ALL_PLATES,
       payload,
     },
       Actions.addNotificationAction({

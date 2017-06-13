@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
 import {connect} from 'react-redux';
-import {deletePlate} from '../../store/actions';
+import {deletePlate, getAllPlates} from '../../store/actions';
 
 
 const customStyles = {
@@ -28,7 +28,6 @@ const customStyles = {
 const mapDispatchToProps = dispatch => ({
   deletePlate: payload => dispatch(deletePlate(payload)),
 });
-
 
 class DeletePlateFn extends Component {
 
@@ -60,10 +59,10 @@ class DeletePlateFn extends Component {
     };
 
     return (
-      <span>
-        <button
+      <span className="btn btn-danger">
+        <span
           type="submit"
-          className="btn btn-danger glyphicon glyphicon-trash"
+          className="glyphicon glyphicon-trash"
           onClick={this.openModal}
         />
         <Modal

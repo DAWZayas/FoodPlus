@@ -1,30 +1,30 @@
 * {
-  border-radius: 0px;
+  border-radius: 0px !important;
 }
 body {
   overflow-x: hidden;
 }
-nav {
-  margin: 0px 0px !important;
-  border-radius: 0px !important;
-  padding-left: 10px;
+.navbar-header, footer {
+  background-color: #111;
 }
 footer {
-  background-color: #222;
-  padding: 10px;
-  color: #fff;
-  margin-right: 0px !important;
-  margin-left: 0px !important;
-}
-.container-fluid {
-  padding: 0px !important;
+  height: 50px;
+  position: fixed;
+  width: 382px;
+  bottom: 0;
+  left: 30px;
+  border-top: solid 1px #000;
 }
 .we-are {
   padding-left: 25px;
 }
+.main {
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
 .deliver, .testimonial, .reservation, .header-about {
   width: 100%;
-  height: 300px;
+  height: 400px;
   background-position: center;
   position: relative;
   display: flex;
@@ -77,23 +77,11 @@ footer {
   width: 70%;
 }
 .container-text {
-  background-color: #F9F9F9;
   color: #222;
   width: 100%;
   padding: 10px;
   text-align: justify;
   position: relative;
-}
-.social-networks {
-  margin-left: 10px;
-}
-.social-networks li{
-  display: inline-block;
-  list-style: none;
-  font-size: 2em;
-  margin-right: 30px;
-  margin-top: 20px;
-  transition: all 3s ease;
 }
 .img-circle {
   width: 20px;
@@ -119,18 +107,11 @@ footer {
 .justify-text {
   text-align: justify;
 }
-.margined-content {
-  margin: 15px 5px !important;
-}
-.testimonial-container {
-  position: relative;
-  margin-bottom: 40px !important;
-}
 .testimonial-button-send {
   position: absolute;
   bottom: -25px;
   left: 0;
-  width: 98%;
+  width: 95%;
   border-top: #5A9367;
 }
 .textarea-testimonial {
@@ -153,5 +134,13 @@ footer {
 @media only screen and (min-width: 1114px) {
   .deliver, .testimonial, .reservation {
     height: 400px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .deliver, .testimonial, .reservation, .header-about {
+    width: 100%;
+    height: 230px;
+    background-position: center;
+    background-size: 412px 260px;
   }
 }

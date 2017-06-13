@@ -19,8 +19,8 @@ class UpdatePlate extends Component {
   render() {
     const {plate} = this.props;
     return (
-      <div className="row container-body">
-        <div className="col-md-6">
+      <div className="row main">
+        <div className="col-md-12">
           <a className="thumbnail">
             <img src={plate.urlimage} alt="plate" />
           </a>

@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     const {children, token} = this.props;
     return (
-      <div className="container-fluid">
+      <div className="container-fluid bottom-margin-home">
         {token ? <Header {...this.props} /> : null}
         {children}
         <Footer />

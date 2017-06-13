@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AboutUs = () => (
-  <section className="row">
+  <section className="row main">
     <div className="col-md-12">
       <div className="header-about" />
     </div>

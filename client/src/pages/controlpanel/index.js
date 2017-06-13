@@ -1,59 +1,13 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {Link} from 'react-router';
 
-import {getAllPlates} from '../../store/actions';
-import DeletePlateFn from '../../components/modals/deleteplate';
-
-const mapStateToProps = state => ({
-  plates: state.plates.plates,
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchPlates: () => dispatch(getAllPlates()),
-});
+import ControlPlates from '../../components/controlpanel/plates';
 
 class ControlPanel extends Component {
 
-  componentWillMount() {
-    this.props.fetchPlates();
-  }
-
   render() {
-    const {plates} = this.props;
     return (
-      <section className="row">
-        <div className="container-body">
-          <div className="col-md-6">
-            <div className="panel panel-primary">
-              <div className="panel-heading">
-                <h3 className="panel-title">Manage Plates | <Link to="/createplate">
-                  <span className="fa fa-plus-square" /> Add new plate
-                  </Link>
-                </h3>
-              </div>
-              <div className="panel-body">
-                <ul className="list-group">
-                  { plates.length >= 1 ?
-                      plates.map((plate, index) => (
-                        <li key={index} className="list-group-item">
-                          <div className="btn-group" role="group" aria-label="...">
-                            <DeletePlateFn plateId={plate.id} />
-                            <Link className="btn btn-success" to={`/updateplate/${plate.id}`}>
-                              <span className="fa fa-pencil-square-o" />
-                            </Link>
-                          </div> {plate.name}
-                        </li>
-                      ))
-                  : <span>No hay platos</span> }
-                </ul>
-                <button className="btn btn-default">&lt;</button> <button className="btn btn-default">&gt;</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ControlPlates />
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ControlPanel);
+export default ControlPanel;

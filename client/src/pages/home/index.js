@@ -3,8 +3,8 @@ import React from 'react';
 import {Link} from 'react-router';
 
 const Home = () => (
-  <div className="row">
-    <div className="col-md-12">
+  <div className="row main">
+    <div className="col-xs-12 col-md-12 col-lg-12">
       <div className="deliver">
         <Link to="/booking" className="transparent-button">Booking</Link>
         <Link to="/login" className="transparent-button">Login</Link>

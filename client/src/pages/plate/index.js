@@ -23,21 +23,19 @@ class Plate extends Component {
     // ¿De quién está cogiendo estas propiedades?
     const {plates} = this.props;
     return (
-      <div className="container-body">
-        <div className="row">
-          {plates.map((plate, i) => (
-            <div key={i} className="col-sm-4">
-              <div className="thumbnail">
-                <img src={plate.urlimage} alt={plate.name} />
-                <div className="caption">
-                  <h3>{plate.name}</h3>
-                  <p>{plate.ingredients}</p>
-                  <button className="btn btn-success">Add to cart</button> <button className="btn btn-info">+ info</button>
-                </div>
+      <div className="row main">
+        {plates.map((plate, i) => (
+          <div key={i} className="col-sm-4">
+            <div className="thumbnail">
+              <img src={plate.urlimage} alt={plate.name} />
+              <div className="caption">
+                <h3>{plate.name}</h3>
+                <p>{plate.ingredients}</p>
+                <button className="btn btn-success">Add to cart</button> <button className="btn btn-info">+ info</button>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     );
   }

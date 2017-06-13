@@ -23,7 +23,7 @@ class Testimonials extends Component {
     const {sendTestimonial, testimonials} = this.props;
 
     return (
-      <div className="row margined-content testimonial-container">
+      <div className="row main">
         {testimonials.length >= 1 ?
           testimonials.map((testimonial, index) => (
             <div key={index} className="col-xs-12 col-md-6 col-lg-6">
