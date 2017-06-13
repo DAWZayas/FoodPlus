@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Modal from 'react-modal';
-import {doCloseQuestion} from '../../store/actions';
 import {connect} from 'react-redux';
+import {deleteTestimonial} from '../../store/actions';
 
 
 const customStyles = {
@@ -26,15 +26,14 @@ const customStyles = {
 
 
 const mapDispatchToProps = dispatch => ({
-  doCloseQuestion: payload => dispatch(doCloseQuestion(payload)),
+  deleteTestimonial: payload => dispatch(deleteTestimonial(payload)),
 });
 
-
-class LockQuestion extends React.Component {
+class DeleteTestimonial extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { modalIsOpen: false };
+    this.state = {modalIsOpen: false};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -49,43 +48,44 @@ class LockQuestion extends React.Component {
 
   render() {
 
-    const {doCloseQuestion, questionId} = this.props;
+    const {deleteTestimonial, testimonialId} = this.props;
+    console.log(this.props);
 
-    const handleLockQuestion = (e) => {
+    const handleDeleteTestimonial = (e) => {
       e.preventDefault();
       this.closeModal();
-      this.props.doCloseQuestion({
-        questionId,
+      this.props.deleteTestimonial({
+        testimonialId,
       });
-      //accion de bloquear la pregunta
     };
 
     return (
-      <span>
-        <button
+      <span className="btn btn-danger">
+        <span
           type="submit"
-          style={{marginLeft: '10px'}}
-          className="btn glyphicon glyphicon-lock"
+          className="glyphicon glyphicon-trash"
           onClick={this.openModal}
         />
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
+          contentLabel="Delete plate"
         >
-        <div className="container">
-          <a className="glyphicon glyphicon-remove pull-right" role="button" onClick={this.closeModal} />
-          <h4> Are you sure that you want to lock the question? </h4>
-          <span>
-            <button type="submit" className="btn btn-danger" onClick={this.closeModal} style={{marginRight: '2%'}}>No</button>
-            <button type="submit" className="btn btn-success" onClick={handleLockQuestion}>Yes</button>
-          </span>
-        </div>
+          <div className="container">
+            <a className="glyphicon glyphicon-remove pull-right" role="button" onClick={this.closeModal} />
+            <h4>Do you want to delete this testimonial?</h4>
+            <span>
+              <button type="submit" className="btn btn-danger" onClick={this.closeModal} style={{marginRight: '2%'}}>
+                No
+              </button>
+              <button type="submit" className="btn btn-success" onClick={handleDeleteTestimonial}>Yes</button>
+            </span>
+          </div>
         </Modal>
       </span>
     );
   }
 }
 
-export default connect(null, mapDispatchToProps)(LockQuestion);
+export default connect(null, mapDispatchToProps)(DeleteTestimonial);

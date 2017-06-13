@@ -41,21 +41,6 @@ export const removeNotificationAction = notificationId => ({
   type: ActionTypes.REMOVE_NOTIFICATION,
   payload: {notificationId},
 });
-
-export const getAllQuestions = () => ({
-  type: ActionTypes.GET_ALL_QUESTIONS,
-});
-
-export const answerQuestion = payload => ({
-  type: ActionTypes.ANSWER_QUESTION,
-  payload,
-});
-
-export const createQuestion = payload => ({
-  type: ActionTypes.CREATE_QUESTION,
-  payload,
-});
-
 /*
     All actions about PLATES
 */

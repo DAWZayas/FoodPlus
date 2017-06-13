@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
 import {connect} from 'react-redux';
-import {deletePlate, getAllPlates} from '../../store/actions';
+import {deletePlate} from '../../store/actions';
 
 
 const customStyles = {

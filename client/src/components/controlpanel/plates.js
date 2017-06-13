@@ -22,15 +22,12 @@ class ControlPlates extends Component {
   render() {
     const {plates} = this.props;
     return (
-      <section className="row main">
+      <section>
         <div className="col-md-6">
           <div className="panel panel-primary">
             <div className="panel-heading">
-              <h3 className="panel-title">Manage Plates | <Link to="/createplate">
-                <span className="btn btn-success">
-                  Add new plate
-                </span>
-              </Link>
+              <h3 className="panel-title">
+                <span className="fa fa-cutlery" /> Manage Plates
               </h3>
             </div>
             <div className="panel-body">
@@ -47,9 +44,15 @@ class ControlPlates extends Component {
                         <div className="clearfix" />
                       </li>
                     ))
-                : <span>No hay platos</span> }
+                : <span>There is not plates</span> }
               </ul>
-              <button className="btn btn-default">&lt;</button> <button className="btn btn-default">&gt;</button>
+              <button className="btn btn-default">&lt;</button>
+              <button className="btn btn-default">&gt;</button>
+              <Link className="pull-right" to="/createplate">
+                <span className="btn btn-success">
+                  Add new plate
+                </span>
+              </Link>
             </div>
           </div>
         </div>
