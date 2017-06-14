@@ -26,24 +26,25 @@ class Testimonials extends Component {
       <div className="row main">
         {testimonials.length >= 1 ?
           testimonials.map((testimonial, index) => (
-            <div key={index} className="col-xs-12 col-md-6 col-lg-6">
-              <div className="panel panel-default">
-                <div className="panel-body">
-                  <div className="profile-image" />
-                  <h4>{testimonial.ownerName}</h4>
-                  <p className="justify-text">
-                    {testimonial.text}
-                  </p>
+            testimonial.state === 'accepted' ?
+              <div key={index} className="col-xs-12 col-md-6 col-lg-6">
+                <div className="panel panel-default">
+                  <div className="panel-body">
+                    <div className="profile-image" />
+                    <h4>{testimonial.ownerName}</h4>
+                    <p className="justify-text">
+                      {testimonial.text}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            : null
           ))
         :
-          <div className="alert alert-info">
-            <h4><span className="glyphicon glyphicon-info-sign" /> There are not testimonials to show.</h4>
-          </div>
+            <div className="alert alert-info">
+              <h4><span className="glyphicon glyphicon-info-sign" />There are not testimonials to show.</h4>
+            </div>
         }
-        <SendTestimonial />
       </div>
     );
   }

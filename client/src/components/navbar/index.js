@@ -46,7 +46,6 @@ const NavBar = ({actualPath, user}) => (
                   <span className="glyphicon glyphicon-user" /> {user.login} <span className="caret" />
                 </a>
                 <ul className="dropdown-menu">
-                  <li><Link to="/controlpanel"><span className="glyphicon glyphicon-th" /> Control panel</Link></li>
                   <li role="separator" className="divider" />
                   <li><Logout /></li>
                 </ul>
