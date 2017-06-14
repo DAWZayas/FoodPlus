@@ -14,7 +14,8 @@ const Notifications = ({notifications}) => (
     <ReactCSSTransitionGroup
       transitionName={transitions}
       transitionEnterTimeout={700}
-      transitionLeaveTimeout={700}>
+      transitionLeaveTimeout={700}
+    >
       {
         notifications.map(notification => (
           <Notification key={notification.id} notification={notification} />

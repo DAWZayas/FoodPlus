@@ -2,7 +2,6 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-import {Notifications} from '../notifications';
 import NavbarLink from './navbarLink';
 import Logout from './logout';
 
@@ -55,7 +54,6 @@ const NavBar = ({actualPath, user}) => (
         </div>
       </div>
     </nav>
-    <Notifications />
   </div>
 );
 
