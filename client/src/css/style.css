@@ -10,7 +10,7 @@ body {
 footer {
   height: 50px;
   position: fixed;
-  width: 380px;
+  width: 382px;
   bottom: 0;
   left: 30px;
   border-top: solid 1px #000;
@@ -118,7 +118,7 @@ footer {
   margin-bottom: 10px;
 }
 .footer-menu {
-  padding-top: 10px;
+  padding-top: 6px;
   font-size: 2em;
   color: #FFF;
   display: flex;
@@ -137,9 +137,9 @@ footer {
 }
 .notification {
   position: fixed;
-  width: 380px;
+  width: 382px;
   z-index: 4;
-  top: 40%;
+  bottom: 30px;
   padding: 10px !important;
   word-wrap: break-word !important;
 }

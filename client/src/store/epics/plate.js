@@ -37,7 +37,7 @@ export const createPlate = action$ => action$
         payload: plate,
       },
       Actions.addNotificationAction(
-        {text: `Plate with name "${plate.name}" created`, alertType: 'info'},
+        {text: `Plate "${plate.name}" was succefully created`, alertType: 'info'},
       ),
     ))
     .catch(error => Observable.of(
@@ -80,7 +80,7 @@ export const deletePlate = action$ => action$
       payload,
     },
       Actions.addNotificationAction({
-        text: 'Plate deleted', alertType: 'success',
+        text: 'Plate was succefully deleted', alertType: 'success',
       }),
   ))
   .catch(error => Observable.of({

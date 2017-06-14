@@ -36,7 +36,7 @@ export const sendTestimonial = action$ => action$
         payload: testimonial,
       },
       Actions.addNotificationAction(
-        {text: 'Testimonial sent', alertType: 'info'},
+        {text: 'Testimonial was successfully sent', alertType: 'info'},
       ),
     ))
     .catch(error => Observable.of(
@@ -61,7 +61,7 @@ export const deleteTestimonial = action$ => action$
       payload,
     },
       Actions.addNotificationAction({
-        text: 'Plate deleted', alertType: 'success',
+        text: 'Testimonial was successfully deleted', alertType: 'success',
       }),
   ))
   .catch(error => Observable.of({
@@ -86,7 +86,7 @@ export const updateTestimonial = action$ => action$
         payload: testimonial,
       },
       Actions.addNotificationAction(
-        {text: 'Testimonial updated', alertType: 'info'},
+        {text: 'Testimonial was succefully updated', alertType: 'info'},
       ),
     ))
     .catch(error => Observable.of(
