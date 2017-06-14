@@ -10,7 +10,7 @@ body {
 footer {
   height: 50px;
   position: fixed;
-  width: 382px;
+  width: 380px;
   bottom: 0;
   left: 30px;
   border-top: solid 1px #000;
@@ -116,6 +116,24 @@ footer {
 }
 .textarea-testimonial {
   margin-bottom: 10px;
+}
+.footer-menu {
+  padding-top: 10px;
+  font-size: 2em;
+  color: #FFF;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.footer-menu a {
+  color: #FFF;
+}
+.footer-menu-element {
+  width: 30px;
+  margin: 0 15px;
+  height: 100%;
+  display: inline-block;
 }
 /* Font awesome */
 .fa-twitter {

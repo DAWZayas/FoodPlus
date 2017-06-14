@@ -60,14 +60,12 @@ class SendTestimonial extends React.Component {
 
     return (
       <span>
-        <button
+        <span
           type="submit"
           style={{marginLeft: '10px'}}
           onClick={this.openModal}
-          className="btn btn-success testimonial-button-send"
-        >
-          Send new testimonial
-        </button>
+          className="fa fa-commenting-o footer-menu-element"
+        />
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
