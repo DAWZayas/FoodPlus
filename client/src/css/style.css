@@ -93,7 +93,7 @@ footer {
   margin-right: 5px;
   margin-bottom: 1px;
   float: left;
-  border-radius: 50px;
+  border-radius: 50px !important;
   background-image: url('../images/profile.png');
   background-position: cover;
   background-size: 60px 60px;
