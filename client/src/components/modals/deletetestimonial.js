@@ -49,7 +49,6 @@ class DeleteTestimonial extends Component {
   render() {
 
     const {deleteTestimonial, testimonialId} = this.props;
-    console.log(this.props);
 
     const handleDeleteTestimonial = (e) => {
       e.preventDefault();

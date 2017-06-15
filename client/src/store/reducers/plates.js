@@ -1,6 +1,6 @@
 import * as ActionTypes from '../actionTypes';
 
-const initialState = {plates: [], status: 'initied'};
+const initialState = {plates: [], status: 'initied', hasMore: true};
 
 export const plates = (state = initialState, action) => {
   switch (action.type) {
@@ -9,6 +9,19 @@ export const plates = (state = initialState, action) => {
       return {
         ...state,
         plates: newPlates,
+      };
+    }
+    case ActionTypes.RESET_PLATES:
+      return {plates: [], status: 'loading', hasMore: true, error: null};
+    case ActionTypes.GET_MORE_PLATES:
+      return {...state, status: 'loading', error: null};
+    case ActionTypes.GET_MORE_PLATES_SUCCESS: {
+      const hasMore = action.payload.plates.length === 5;
+      return {
+        ...state,
+        plates: action.payload.reset ? action.payload.plates : state.plates.concat(action.payload.plates),
+        status: 'done',
+        hasMore,
       };
     }
     case ActionTypes.GET_ALL_PLATES:

@@ -21,7 +21,6 @@ import NotFound from './pages/notfound';
 // Plates pages routes
 import Plates from './pages/plate';
 import CreatePlate from './pages/plate/create';
-import UpdatePlate from './pages/plate/update';
 // Other stufs
 import ControlPanel from './pages/controlpanel/';
 // Static pages
@@ -46,7 +45,6 @@ ReactDOM.render((
         <Route path="register" component={Register} />
         <Route path="plates" component={Plates} onEnter={requireAuth} />
         <Route path="createplate" component={CreatePlate} onEnter={requireAuth} />
-        <Route path="updateplate/:id" component={UpdatePlate} onEnter={requireAuth} />
         <Route path="controlpanel" component={ControlPanel} onEnter={requireAuth} />
         <Route path="about" component={AboutUs} />
         <Route path="testimonials" component={Testimonials} />

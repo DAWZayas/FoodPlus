@@ -1,6 +1,6 @@
 import {login, register, logout} from './auth';
 import {addNotification} from './notifications';
-import {createPlate, getAllPlates, getThePlate, deletePlate} from './plate';
+import {createPlate, getAllPlates, getThePlate, deletePlate, updatePlate, getMorePlates} from './plate';
 import {sendTestimonial, updateTestimonial, getTestimonial, deleteTestimonial} from './testimonials';
 
 export default [
@@ -12,8 +12,9 @@ export default [
   // Plates
   createPlate,
   getAllPlates,
-  getThePlate,
   deletePlate,
+  updatePlate,
+  getMorePlates,
   // Testimonials
   sendTestimonial,
   updateTestimonial,

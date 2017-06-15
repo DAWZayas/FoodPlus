@@ -87,3 +87,8 @@ export const deleteTestimonial = payload => ({
   type: ActionTypes.DELETE_TESTIMONIAL,
   payload,
 });
+
+export const getMorePlates = payload => ({
+  type: ActionTypes.GET_MORE_PLATES,
+  payload,
+});
